@@ -114,7 +114,7 @@ export default function App() {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
               <a href="#">
-                <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group" className="h-16 sm:h-[72px] w-auto object-contain transform scale-110 origin-left" />
+                <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group" width="160" height="72" className="h-16 sm:h-[72px] w-auto object-contain transform scale-110 origin-left" />
               </a>
             </div>
 
@@ -176,6 +176,8 @@ export default function App() {
             <img 
               src="/pictures/hero.webp" 
               alt="Construction Worker" 
+              width="1920" height="1080" 
+              fetchpriority="high" 
               className="w-full h-full object-cover object-[center_top]"
             />
             <div className="absolute inset-0 bg-[#1a2332]/1 mix-blend-multiply"></div>
@@ -617,8 +619,8 @@ export default function App() {
                 <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark mb-10 lg:mb-12">Eng ko'p beriladigan<br className="hidden lg:block"/>savollar</h2>
                 
                 <div className="space-y-6">
-                  <img loading="lazy" src="/pictures/a056922e920aa4647cba3d490de74b43.webp" alt="Team meeting" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
-                  <img loading="lazy" src="/pictures/1463db54173250c425b18faccc17a2dc.webp" alt="Person wondering" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
+                  <img width="400" height="200" loading="lazy" src="/pictures/a056922e920aa4647cba3d490de74b43.webp" alt="Team meeting" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
+                  <img width="400" height="200" loading="lazy" src="/pictures/1463db54173250c425b18faccc17a2dc.webp" alt="Person wondering" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
                 </div>
               </motion.div>
               <div className="lg:col-span-7 space-y-4">
