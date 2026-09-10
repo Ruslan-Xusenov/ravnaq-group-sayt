@@ -136,7 +136,7 @@ export default function App() {
             
             {/* Mobile menu button */}
             <div className="lg:hidden flex items-center">
-              <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-ravnaq-dark hover:text-ravnaq-gold transition">
+              <button aria-label="Menyuni ochish" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-ravnaq-dark hover:text-ravnaq-gold transition">
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
@@ -239,7 +239,7 @@ export default function App() {
                 viewport={{ once: true }}
               >
                 <div className="bg-[#f9f9f9]/95 backdrop-blur-xl border-4 border-white/40 rounded-[28px] p-6 sm:p-8 pb-0 shadow-[0_20px_50px_rgba(0,0,0,0.3)] max-w-[380px] w-full relative overflow-hidden">
-                  <h3 className="text-[22px] font-bold text-[#1a2332] mb-8">Natijalarimiz</h3>
+                  <h2 className="text-[22px] font-bold text-[#1a2332] mb-8">Natijalarimiz</h2>
                   <div className="flex justify-between mb-8 px-2">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-ravnaq-gold"><CountUp end={10} duration={2} enableScrollSpy scrollSpyOnce />+</div>
@@ -258,7 +258,7 @@ export default function App() {
                   </div>
                   <div className="relative z-10">
                     <div className="text-[34px] font-bold text-ravnaq-gold mb-0.5 leading-none">$<CountUp end={42} duration={2} enableScrollSpy scrollSpyOnce /> mln</div>
-                    <div className="text-[11px] text-gray-400 mb-12">umumiy sotuv summasi</div>
+                    <div className="text-[11px] text-gray-500 mb-12">umumiy sotuv summasi</div>
                   </div>
                   {/* Smoother Chart graphic */}
                   <div className="absolute bottom-0 left-0 right-0 h-[100px] w-full z-0">
@@ -283,7 +283,7 @@ export default function App() {
           >
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
             <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
-              <h3 className="text-xl font-bold text-[#1a2332] text-center md:text-left md:w-1/4 leading-snug shrink-0">Bizning<br className="hidden md:block"/>loyihalarimiz</h3>
+              <h2 className="text-xl font-bold text-[#1a2332] text-center md:text-left md:w-1/4 leading-snug shrink-0">Bizning<br className="hidden md:block"/>loyihalarimiz</h2>
               <div className="flex-1 w-full relative overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
                 <Marquee gradient={false} speed={40} pauseOnHover={true} pauseOnClick={true}>
                   <div className="flex gap-6 pr-6 py-2">
@@ -465,10 +465,10 @@ export default function App() {
             >
               <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark text-center sm:text-left">Biz qurgan tizim – real<br className="hidden sm:block"/>natijalarda</h2>
               <div className="flex gap-2 justify-center sm:justify-start">
-                <button className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-ravnaq-dark hover:text-white transition hover:border-ravnaq-dark">
+                <button aria-label="Oldingi slayd" className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-ravnaq-dark hover:text-white transition hover:border-ravnaq-dark">
                   <ChevronLeft size={20} />
                 </button>
-                <button className="w-12 h-12 rounded-full border border-ravnaq-dark bg-ravnaq-dark text-white flex items-center justify-center hover:bg-opacity-90 transition">
+                <button aria-label="Keyingi slayd" className="w-12 h-12 rounded-full border border-ravnaq-dark bg-ravnaq-dark text-white flex items-center justify-center hover:bg-opacity-90 transition">
                   <ChevronRight size={20} />
                 </button>
               </div>
@@ -560,7 +560,7 @@ export default function App() {
             viewport={{ once: true, amount: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-4">XIZMATLARIMIZ</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-500 max-w-2xl mx-auto">
               Obyektingizni sotishga ishlaydigan 5 tizim<br/>
               Har bir xizmat alohida emas - barchasi bitta maqsadga ko'proq xaridor jalb qilishga ishlaydi.
             </p>
@@ -624,12 +624,12 @@ export default function App() {
               <div className="lg:col-span-7 space-y-4">
                 {faqs.map((faq, idx) => (
                   <div key={idx} className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-                    <button 
+                    <button aria-label="Savolni ko'rish" 
                       onClick={() => setOpenFaq(openFaq === idx ? -1 : idx)}
                       className="w-full text-left px-6 py-5 font-semibold text-ravnaq-dark flex justify-between items-center focus:outline-none"
                     >
                       {faq.question}
-                      <ChevronDown size={20} className={`transform transition-transform ${openFaq === idx ? "rotate-180 text-ravnaq-gold" : "text-gray-400"}`} />
+                      <ChevronDown size={20} className={`transform transition-transform ${openFaq === idx ? "rotate-180 text-ravnaq-gold" : "text-gray-500"}`} />
                     </button>
                     <AnimatePresence initial={false}>
                       {openFaq === idx && (
@@ -690,7 +690,7 @@ export default function App() {
               <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
                 Keling, biznesingiz haqida gaplashamiz
               </h2>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-500 text-sm leading-relaxed">
                 Ma'lumotlaringizni qoldiring — mutaxassisimiz siz bilan tez orada bog'lanadi.
               </p>
             </motion.div>
@@ -719,7 +719,7 @@ export default function App() {
                       <Send size={18} />
                     </div>
                     <div>
-                      <p className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold mb-0.5">TELEGRAM</p>
+                      <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-0.5">TELEGRAM</p>
                       <p className="text-sm font-semibold text-ravnaq-dark">@ravnaqgroup</p>
                     </div>
                   </a>
@@ -733,7 +733,7 @@ export default function App() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold mb-0.5">INSTAGRAM</p>
+                      <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-0.5">INSTAGRAM</p>
                       <p className="text-sm font-semibold text-ravnaq-dark">@ravnaq.group</p>
                     </div>
                   </a>
@@ -752,13 +752,13 @@ export default function App() {
 
               {/* Right Side — Form */}
               <div className="flex-1 flex flex-col md:pl-10 mt-10 md:mt-0">
-                <h3 className="font-bold text-2xl mb-2">Bepul audit uchun ariza</h3>
+                <h2 className="font-bold text-2xl mb-2">Bepul audit uchun ariza</h2>
                 <p className="text-[13px] text-gray-500 mb-8 font-medium">Formani to'ldiring — 24 soat ichida bog'lanamiz.</p>
 
                 {sent ? (
                   <div className="flex-1 flex flex-col items-center justify-center text-center py-8">
                     <div className="text-5xl mb-4">✅</div>
-                    <h4 className="font-bold text-xl text-ravnaq-dark mb-2">Ariza qabul qilindi!</h4>
+                    <h3 className="font-bold text-xl text-ravnaq-dark mb-2">Ariza qabul qilindi!</h3>
                     <p className="text-gray-500 text-sm">24 soat ichida siz bilan bog'lanamiz.</p>
                     <button onClick={() => setSent(false)} className="mt-6 text-ravnaq-gold text-sm underline">
                       Yangi ariza yuborish
@@ -768,40 +768,40 @@ export default function App() {
                   <form className="space-y-4 flex-1 flex flex-col" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
                           <User size={16} />
                         </div>
-                        <input name="name" value={form.name} onChange={handleChange} type="text" placeholder="Ismingiz" className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
+                        <input aria-label="Ismingiz" name="name" value={form.name} onChange={handleChange} type="text" placeholder="Ismingiz" className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
                       </div>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400 gap-2">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500 gap-2">
                           <Phone size={16} />
                           <span className="text-gray-500 font-medium text-sm">+998</span>
                         </div>
-                        <input name="phone" value={form.phone} onChange={handleChange} type="tel" className="w-full pl-24 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
+                        <input aria-label="Telefon raqamingiz" name="phone" value={form.phone} onChange={handleChange} type="tel" className="w-full pl-24 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
                       </div>
                     </div>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
                           <Building size={16} />
                         </div>
-                        <input name="company" value={form.company} onChange={handleChange} type="text" placeholder="Kompaniyangiz nomi" className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
+                        <input aria-label="Kompaniyangiz nomi" name="company" value={form.company} onChange={handleChange} type="text" placeholder="Kompaniyangiz nomi" className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
                       </div>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
                           <Briefcase size={16} />
                         </div>
-                        <input name="position" value={form.position} onChange={handleChange} type="text" placeholder="Lavozimingiz" className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
+                        <input aria-label="Lavozimingiz" name="position" value={form.position} onChange={handleChange} type="text" placeholder="Lavozimingiz" className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
                       </div>
                     </div>
 
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
                         <Settings size={16} />
                       </div>
-                      <select name="service" value={form.service} onChange={handleChange} className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-gray-500 bg-white text-sm font-medium appearance-none">
+                      <select aria-label="Sizga qanday xizmat kerak" name="service" value={form.service} onChange={handleChange} className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-gray-500 bg-white text-sm font-medium appearance-none">
                         <option value="">Qaysi xizmat qiziqtirdi?</option>
                         <option>SMM</option>
                         <option>Lead Generation</option>
@@ -809,16 +809,16 @@ export default function App() {
                         <option>Zapusk</option>
                         <option>CRM va raqamlashtirish</option>
                       </select>
-                      <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-400">
+                      <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-500">
                         <ChevronDown size={16} />
                       </div>
                     </div>
 
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
                         <LinkIcon size={16} />
                       </div>
-                      <select name="source" value={form.source} onChange={handleChange} className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-gray-500 bg-white text-sm font-medium appearance-none">
+                      <select aria-label="Biz haqimizda qayerdan bildingiz" name="source" value={form.source} onChange={handleChange} className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-gray-500 bg-white text-sm font-medium appearance-none">
                         <option value="">Qayerdan bildingiz?</option>
                         <option>Instagram</option>
                         <option>Telegram</option>
@@ -826,7 +826,7 @@ export default function App() {
                         <option>Qidiruv (Google/Yandex)</option>
                         <option>Boshqa</option>
                       </select>
-                      <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-400">
+                      <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-500">
                         <ChevronDown size={16} />
                       </div>
                     </div>
@@ -839,7 +839,7 @@ export default function App() {
                       >
                         {sending ? 'Yuborilmoqda...' : 'Ariza qoldirish'} <ArrowRight size={18} />
                       </button>
-                      <p className="text-[10px] text-gray-400 text-center mt-4">
+                      <p className="text-[10px] text-gray-500 text-center mt-4">
                         Tugmani bosish orqali shaxsiy ma'lumotlaringizni qayta ishlashga rozilik bildirasiz.
                       </p>
                     </div>
