@@ -39,6 +39,10 @@
   .animate-marquee-slow {
     animation: marquee 30s linear infinite;
   }
+  .animate-marquee-slow:hover,
+  .animate-marquee-slow:active {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes marquee {
@@ -55,6 +59,10 @@
   animation: marquee-problems 30s linear infinite;
   display: flex;
   width: max-content;
+}
+.animate-marquee-problems:hover,
+.animate-marquee-problems:active {
+  animation-play-state: paused;
 }
 
 /* Premium Leaflet map styles */

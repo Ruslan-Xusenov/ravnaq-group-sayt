@@ -4,6 +4,8 @@ import PremiumMap from "./PremiumMap";
 import { motion, AnimatePresence } from "framer-motion";
 import CountUpPkg from "react-countup";
 const CountUp = CountUpPkg.default || CountUpPkg;
+import MarqueePkg from "react-fast-marquee";
+const Marquee = MarqueePkg.default || MarqueePkg;
 import "leaflet/dist/leaflet.css";
 
 const BOT_TOKEN = import.meta.env.VITE_BOT_TOKEN;
@@ -64,7 +66,7 @@ export default function App() {
     { question: "01. RAVNAQ GROUP qanday ishlaydi?", answer: "Biz qurilish loyihasining marketing va sotuv jarayonlarini yagona tizimda boshqaramiz. Maqsadimiz — loyihaga sifatli xaridorlarni olib kelish va ularni real sotuvga aylantirish." },
     { question: "02. Hamkorlik uchun oldindan to'lov qilinadimi?", answer: "Yo'q. Hamkorlikni oldindan to'lovsiz boshlaymiz. Bizning daromadimiz sotilgan xonadonlardan olinadigan komissiya asosida shakllanadi." },
     { question: "03. RAVNAQ GROUP qanday xizmatlarni o'z ichiga oladi?", answer: "RAVNAQ GROUP — qurilish loyihasining marketing va sotuvini to'liq boshqaradigan yagona tizim. Strategiyadan boshlab SMM, lead generation, CRM, sotuv bo'limi, zapusk va quruvchining shaxsiy brendigacha bo'lgan barcha jarayonlar bitta hamkorlik modeli ichida amalga oshiriladi." },
-    { question: "04. Faqat marketing bilan shug'ullanasizmi?", answer: "Yo'q. Biz marketingdan kelgan mijozni sotuvgacha olib boradigan butun jarayonni boshqaramiz." },
+    { question: "04. Faqat marketing bilan shug'ullanasizmi?", answer: "Yo'q. Biz faqat reklama, SMM yoki lead generation bilan cheklanmaymiz. Marketingdan boshlab, mijozni jalb qilish, CRM orqali boshqarish va uni real sotuvga aylantirishgacha bo'lgan butun jarayonni o'z zimmamizga olamiz." },
     { question: "05. Sotuv bo'limini ham tashkil qilib berasizmi?", answer: "Ha. Sotuvchilar, ROP, skriptlar, KPI va nazorat tizimini shakllantirib, sotuv jarayonini yo'lga qo'yamiz." },
     { question: "06. Qanday qurilish loyihalari bilan ishlaysiz?", answer: "50 tadan 5000+ tagacha xonadonli qurilish loyihalari bilan ishlaymiz. Hamkorlik modeli loyiha hajmi va sotuv maqsadiga qarab shakllantiriladi." },
     { question: "07. Xonadonlarni qancha vaqtda sotib berasiz?", answer: "Bu loyihaning joylashuvi, narxi, qurilish bosqichi, xonadonlar soni va bozor talabiga bog'liq. Loyihani tahlil qilgandan so'ng real sotuv rejasi ishlab chiqiladi." },
@@ -165,7 +167,7 @@ export default function App() {
                 >
                   Qurilish biznesingiz uchun <br className="hidden sm:block"/>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-ravnaq-gold to-yellow-400">
-                    performance marketing
+                    raqamlashtirilgan sotuv bo'limi<br className="hidden sm:block"/> va marketing xizmati
                   </span>
                 </motion.h1>
 
@@ -177,8 +179,8 @@ export default function App() {
                   whileInView="visible"
                   viewport={{ once: true }}
                 >
-                  Strategiya, brending va B2B sotuvlar – kompleks yondashuv orqali 
-                  kompaniyangiz daromadini oshiramiz va bozorda yetakchiga aylantiramiz.
+                  Strategiya, brending, reklama, lidlar oqimi va tahlilgacha va 
+                  sotuvning barcha jarayonlarini raqamlashtirilgan yagona ekotizimda boshqaramiz.
                 </motion.p>
                 
                 <motion.div 
@@ -192,9 +194,6 @@ export default function App() {
                   <button className="bg-ravnaq-gold hover:bg-[#c5913d] text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition w-full sm:w-auto shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                     Bepul diagnostika olish
                     <ArrowRight size={18} />
-                  </button>
-                  <button className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-2xl font-bold transition w-full sm:w-auto">
-                    Kompaniya haqida
                   </button>
                 </motion.div>
               </div>
@@ -213,17 +212,17 @@ export default function App() {
                   <div className="flex justify-between mb-8 px-2">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-ravnaq-gold"><CountUp end={10} duration={2} enableScrollSpy scrollSpyOnce />+</div>
-                      <div className="text-xs text-gray-500 font-medium mt-1">Yillik<br/>tajriba</div>
+                      <div className="text-xs text-gray-500 font-medium mt-1">loyiha</div>
                     </div>
                     <div className="w-px bg-gray-200"></div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-ravnaq-gold"><CountUp end={35} duration={2} enableScrollSpy scrollSpyOnce />+</div>
-                      <div className="text-xs text-gray-500 font-medium mt-1">Muvaffaqiyatli<br/>loyihalar</div>
+                      <div className="text-xs text-gray-500 font-medium mt-1">mutaxassis</div>
                     </div>
                     <div className="w-px bg-gray-200"></div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-ravnaq-gold">$<CountUp end={42} duration={2} enableScrollSpy scrollSpyOnce /> mln</div>
-                      <div className="text-xs text-gray-500 font-medium mt-1">Mijozlar<br/>foydasi</div>
+                      <div className="text-2xl font-bold text-ravnaq-gold"><CountUp end={6} duration={2} enableScrollSpy scrollSpyOnce />+</div>
+                      <div className="text-xs text-gray-500 font-medium mt-1">yil tajriba</div>
                     </div>
                   </div>
                   <div className="relative z-10">
@@ -249,24 +248,21 @@ export default function App() {
             <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
               <h3 className="text-xl font-bold text-[#1a2332] text-center md:text-left md:w-1/4 leading-snug shrink-0">Bizning<br className="hidden md:block"/>loyihalarimiz</h3>
               <div className="flex-1 w-full relative overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
-                <div className="flex w-max animate-marquee-slow gap-6">
+                <Marquee gradient={false} speed={40} pauseOnHover={true} pauseOnClick={true}>
+                  <div className="flex gap-6 pr-6 py-2">
                   {[
                     { name: 'Numan Tower', src: '/pictures/numan.png' },
                     { name: 'Yangi Asr Uylari', src: '/pictures/yangi_asr.png' },
                     { name: 'Oltinsoy City', src: '/pictures/oltinsoy.png' },
                     { name: 'Turon Uylari', src: '/pictures/turon.png' },
                     { name: 'MB Meros', src: '/pictures/mezzon.png' },
-                    { name: 'Numan Tower', src: '/pictures/numan.png' },
-                    { name: 'Yangi Asr Uylari', src: '/pictures/yangi_asr.png' },
-                    { name: 'Oltinsoy City', src: '/pictures/oltinsoy.png' },
-                    { name: 'Turon Uylari', src: '/pictures/turon.png' },
-                    { name: 'MB Meros', src: '/pictures/mezzon.png' },
                   ].map((logo, index) => (
-                    <div key={index} className="flex justify-center items-center w-[160px] md:w-[200px] shrink-0">
-                      <img src={logo.src} alt={logo.name} className="w-full h-auto object-contain rounded-[14px] shadow-sm" />
+                    <div key={index} className="flex justify-center items-center w-[160px] md:w-[200px] h-[140px] md:h-[160px] shrink-0 p-2 sm:p-4 bg-white rounded-[16px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-gray-50">
+                      <img src={logo.src} alt={logo.name} className="max-w-[90%] max-h-[90%] object-contain" />
                     </div>
                   ))}
-                </div>
+                  </div>
+                </Marquee>
               </div>
             </div>
           </div>
@@ -323,7 +319,8 @@ export default function App() {
               WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)',
             }}
           >
-            <div className="animate-marquee-problems gap-6" style={{ gap: '24px' }}>
+            <Marquee gradient={false} speed={40} pauseOnHover={true} pauseOnClick={true}>
+              <div className="flex gap-6 pr-6 py-4">
               {(() => {
                 const cards = [
                   { 
@@ -363,9 +360,7 @@ export default function App() {
                     num: "06"
                   },
                 ];
-                // Duplicate for seamless loop
-                const doubled = [...cards, ...cards];
-                return doubled.map((item, idx) => (
+                return cards.map((item, idx) => (
                   <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-md flex-shrink-0 flex flex-col group hover:shadow-xl transition-shadow duration-300" style={{ width: '300px', marginRight: '24px' }}>
                     <div className="overflow-hidden" style={{ height: '200px' }}>
                       <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
@@ -378,7 +373,8 @@ export default function App() {
                   </div>
                 ));
               })()}
-            </div>
+              </div>
+            </Marquee>
           </div>
 
           <div className="mt-12 text-center">
