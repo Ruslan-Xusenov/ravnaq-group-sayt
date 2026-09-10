@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import { Phone, ArrowRight, ChevronDown, CheckCircle2, ChevronLeft, ChevronRight, Menu, X, Triangle, Building, Building2, Landmark, Diamond, User, Briefcase, Settings, Link as LinkIcon, Send } from "lucide-react";
-import PremiumMap from "./PremiumMap";
+const PremiumMap = lazy(() => import("./PremiumMap"));
 import { motion, AnimatePresence } from "framer-motion";
 import CountUpPkg from "react-countup";
 const CountUp = CountUpPkg.default || CountUpPkg;
@@ -295,7 +295,7 @@ export default function App() {
                     { name: 'MB Meros', src: '/pictures/mezzon.png' },
                   ].map((logo, index) => (
                     <div key={index} className="flex justify-center items-center w-[160px] md:w-[200px] h-[140px] md:h-[160px] shrink-0 p-2 sm:p-4 bg-[#1a2332] rounded-[16px] shadow-[0_8px_20px_rgba(26,35,50,0.15)] border border-[#d4af37]/20 transition-transform duration-300 hover:-translate-y-1">
-                      <img src={logo.src} alt={logo.name} className="max-w-[90%] max-h-[90%] object-contain" />
+                      <img loading="lazy" src={logo.src} alt={logo.name} className="max-w-[90%] max-h-[90%] object-contain" />
                     </div>
                   ))}
                   </div>
@@ -342,7 +342,7 @@ export default function App() {
                 </motion.div>
               </div>
               <motion.div variants={fadeLeftVariant} className="relative rounded-2xl overflow-hidden shadow-2xl h-[300px] sm:h-[400px] lg:h-[500px]">
-                <img 
+                <img loading="lazy" 
                   src="/pictures/rt4y5ui.png" 
                   alt="Office Meeting" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
@@ -422,7 +422,7 @@ export default function App() {
                 return cards.map((item, idx) => (
                   <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-md flex-shrink-0 flex flex-col group hover:shadow-xl transition-shadow duration-300" style={{ width: '300px', marginRight: '24px' }}>
                     <div className="overflow-hidden" style={{ height: '200px' }}>
-                      <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                      <img loading="lazy" src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                     </div>
                     <div className="p-5 flex-1 flex flex-col relative">
                       <h3 className="font-bold text-base text-ravnaq-dark mb-2 pr-8 leading-snug">{item.title}</h3>
@@ -617,8 +617,8 @@ export default function App() {
                 <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark mb-10 lg:mb-12">Eng ko'p beriladigan<br className="hidden lg:block"/>savollar</h2>
                 
                 <div className="space-y-6">
-                  <img src="/pictures/a056922e920aa4647cba3d490de74b43.jpg" alt="Team meeting" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
-                  <img src="/pictures/1463db54173250c425b18faccc17a2dc.jpg" alt="Person wondering" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
+                  <img loading="lazy" src="/pictures/a056922e920aa4647cba3d490de74b43.jpg" alt="Team meeting" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
+                  <img loading="lazy" src="/pictures/1463db54173250c425b18faccc17a2dc.jpg" alt="Person wondering" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
                 </div>
               </motion.div>
               <div className="lg:col-span-7 space-y-4">
@@ -741,7 +741,9 @@ export default function App() {
 
                 {/* Map */}
                 <div className="flex-1 min-h-[160px] rounded-[14px] overflow-hidden">
-                  <PremiumMap />
+                  <Suspense fallback={<div className="h-[400px] bg-gray-100 rounded-3xl animate-pulse flex items-center justify-center text-gray-500">Xarita yuklanmoqda...</div>}>
+                    <PremiumMap />
+                  </Suspense>
                 </div>
               </div>
 
