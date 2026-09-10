@@ -114,7 +114,7 @@ export default function App() {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
               <a href="#">
-                <img src="/pictures/ravnaq-group-logo.png" alt="Ravnaq Group" className="h-16 sm:h-[72px] w-auto object-contain transform scale-110 origin-left" />
+                <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group" className="h-16 sm:h-[72px] w-auto object-contain transform scale-110 origin-left" />
               </a>
             </div>
 
@@ -174,7 +174,7 @@ export default function App() {
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="/pictures/hero.png" 
+              src="/pictures/hero.webp" 
               alt="Construction Worker" 
               className="w-full h-full object-cover object-[center_top]"
             />
@@ -288,11 +288,11 @@ export default function App() {
                 <Marquee gradient={false} speed={40} pauseOnHover={true} pauseOnClick={true}>
                   <div className="flex gap-6 pr-6 py-2">
                   {[
-                    { name: 'Numan Tower', src: '/pictures/numan.png' },
-                    { name: 'Yangi Asr Uylari', src: '/pictures/yangi_asr.png' },
-                    { name: 'Oltinsoy City', src: '/pictures/oltinsoy.png' },
-                    { name: 'Turon Uylari', src: '/pictures/turon.png' },
-                    { name: 'MB Meros', src: '/pictures/mezzon.png' },
+                    { name: 'Numan Tower', src: '/pictures/numan.webp' },
+                    { name: 'Yangi Asr Uylari', src: '/pictures/yangi_asr.webp' },
+                    { name: 'Oltinsoy City', src: '/pictures/oltinsoy.webp' },
+                    { name: 'Turon Uylari', src: '/pictures/turon.webp' },
+                    { name: 'MB Meros', src: '/pictures/mezzon.webp' },
                   ].map((logo, index) => (
                     <div key={index} className="flex justify-center items-center w-[160px] md:w-[200px] h-[140px] md:h-[160px] shrink-0 p-2 sm:p-4 bg-[#1a2332] rounded-[16px] shadow-[0_8px_20px_rgba(26,35,50,0.15)] border border-[#d4af37]/20 transition-transform duration-300 hover:-translate-y-1">
                       <img loading="lazy" src={logo.src} alt={logo.name} className="max-w-[90%] max-h-[90%] object-contain" />
@@ -343,7 +343,7 @@ export default function App() {
               </div>
               <motion.div variants={fadeLeftVariant} className="relative rounded-2xl overflow-hidden shadow-2xl h-[300px] sm:h-[400px] lg:h-[500px]">
                 <img loading="lazy" 
-                  src="/pictures/rt4y5ui.png" 
+                  src="/pictures/rt4y5ui.webp" 
                   alt="Office Meeting" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -383,37 +383,37 @@ export default function App() {
               {(() => {
                 const cards = [
                   { 
-                    img: "/pictures/1463db54173250c425b18faccc17a2dc.jpg",
+                    img: "/pictures/1463db54173250c425b18faccc17a2dc.webp",
                     title: "Loyiha va bozor yetarlicha chuqur o'rganilmaydi.",
                     desc: "Loyiha raqobatchilar va bozor to'liq tahlil qilinmaydi. Natijada xaridor uchun kuchli va ajralib turadigan taklif ishlab chiqilmaydi.",
                     num: "01"
                   },
                   { 
-                    img: "/pictures/280b71cdac2312f54fe65a1af6cbc72c.jpg",
+                    img: "/pictures/280b71cdac2312f54fe65a1af6cbc72c.webp",
                     title: "Maqsadli mijozning aniq portreti tuzilmagan.",
                     desc: "Loyiha kimga sotilishi, xaridorning ehtiyoji, imkoniyati va qaror qabul qilishiga ta'sir qiluvchi omillar chuqur o'rganilmaydi.",
                     num: "02"
                   },
                   { 
-                    img: "/pictures/604c187382d8778d7851c9a49901c3e8.jpg",
+                    img: "/pictures/604c187382d8778d7851c9a49901c3e8.webp",
                     title: "Sotuv bo'limi tizimlashtirilmagan.",
                     desc: "Sotuvchilar, ROP, skriptlar, KPI va nazorat tizimi yo'lga qo'yilmagani sababli kelgan mijozlarning bir qismi sotuvga aylantirilmaydi.",
                     num: "03"
                   },
                   { 
-                    img: "/pictures/a056922e920aa4647cba3d490de74b43.jpg",
+                    img: "/pictures/a056922e920aa4647cba3d490de74b43.webp",
                     title: "Lidlar sifatsiz, reklama byudjeti samarasiz sarflanadi.",
                     desc: "Maqsadli xaridorlar o'rniga sifatsiz murojaatlar keladi. Natijada reklama uchun sarflangan pulning bir qismi havoga uchadi.",
                     num: "04"
                   },
                   { 
-                    img: "/pictures/fd149415820981d3d5c0c9e782dc0595.jpg",
+                    img: "/pictures/fd149415820981d3d5c0c9e782dc0595.webp",
                     title: "Shaxsiy brend va ishonch yo'q.",
                     desc: "Mijozlar bilan ishonch o'rnatilmaganligi sababli, boshqa raqobatchilarga o'tib ketish ehtimoli oshadi.",
                     num: "05"
                   },
                   { 
-                    img: "/pictures/chatgpt-image.png",
+                    img: "/pictures/chatgpt-image.webp",
                     title: "Katta hajmdagi xonadonlarni sotish tizimi yo'lga qo'yilmagan.",
                     desc: "Ko'p xonadonni qisqa muddatda sotish uchun maxsus zapusk strategiyasi ishlab chiqilmaydi va sotuvni sun'iy oshirish mexanizmi yo'lga qo'yilmaydi.",
                     num: "06"
@@ -617,8 +617,8 @@ export default function App() {
                 <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark mb-10 lg:mb-12">Eng ko'p beriladigan<br className="hidden lg:block"/>savollar</h2>
                 
                 <div className="space-y-6">
-                  <img loading="lazy" src="/pictures/a056922e920aa4647cba3d490de74b43.jpg" alt="Team meeting" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
-                  <img loading="lazy" src="/pictures/1463db54173250c425b18faccc17a2dc.jpg" alt="Person wondering" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
+                  <img loading="lazy" src="/pictures/a056922e920aa4647cba3d490de74b43.webp" alt="Team meeting" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
+                  <img loading="lazy" src="/pictures/1463db54173250c425b18faccc17a2dc.webp" alt="Person wondering" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
                 </div>
               </motion.div>
               <div className="lg:col-span-7 space-y-4">
