@@ -19,15 +19,41 @@ async function sendToTelegram(data) {
     `🏢 *Kompaniya:* ${data.company}\n` +
     `💼 *Lavozim:* ${data.position}\n` +
     `🛠 *Xizmat:* ${data.service}\n` +
-    `📣 *Qayerdan:* ${data.source}`;
+    `❓ *Qanday muammo:* ${data.problem}`;
 
-  const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: "Markdown" }),
-  });
-  return res.ok;
+  try {
+    const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: CHAT_ID, text: text, parse_mode: "Markdown" }),
+    });
+    return response.ok;
+  } catch (error) {
+    console.error("Telegramga yuborishda xatolik:", error);
+    return false;
+  }
 }
+
+// Global Animation Variants
+const fadeUpVariant = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+};
+
+const fadeRightVariant = {
+  hidden: { opacity: 0, x: -40 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+};
 
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -243,7 +269,13 @@ export default function App() {
           </section>
 
           {/* Partners Section */}
-          <section className="py-8 bg-white border-b border-gray-100 shrink-0">
+          <motion.section 
+            className="py-8 bg-white border-b border-gray-100 shrink-0"
+            variants={fadeUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
             <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
               <h3 className="text-xl font-bold text-[#1a2332] text-center md:text-left md:w-1/4 leading-snug shrink-0">Bizning<br className="hidden md:block"/>loyihalarimiz</h3>
@@ -266,54 +298,76 @@ export default function App() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
       </div>
 
         {/* About Section */}
-        <section className="py-24 bg-white" id="biz-kimmiz">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+        <section className="py-24 bg-white overflow-hidden" id="biz-kimmiz">
+          <motion.div 
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16"
+            variants={fadeUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <h2 className="text-4xl font-bold text-ravnaq-dark">Biz kimmiz ?</h2>
-          </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          </motion.div>
+          <motion.div 
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
-                <p className="text-lg text-ravnaq-gray leading-relaxed font-normal">
+                <motion.p variants={fadeRightVariant} className="text-lg text-ravnaq-gray leading-relaxed font-normal">
                   <span className="text-ravnaq-dark font-bold">RAVNAQ GROUP</span> — qurilish kompaniyalari uchun marketing va sotuv tizimini boshqaradigan jamoa. Biz alohida marketing yoki sotuv xizmatini emas, loyihaning marketingidan tortib real sotuvigacha bo'lgan jarayonni to'liq o'z zimmamizga olamiz. Quruvchi esa qurilish sifati va muddatiga e'tibor qaratadi.
-                </p>
-                <p className="text-lg text-ravnaq-gray leading-relaxed">
+                </motion.p>
+                <motion.p variants={fadeRightVariant} className="text-lg text-ravnaq-gray leading-relaxed">
                   Bizning yondashuvimiz — marketing va sotuvni yagona raqamlashtirilgan tizimda boshqarish. Marketing orqali loyihaga talab va sifatli xaridorlar oqimini yaratamiz, RAVNAQ GROUP Akademiyasida tayyorlangan tajribali sotuvchilarni loyihaga biriktiramiz va kelgan murojaatlarni tizimli ravishda real sotuvga aylantiramiz.
-                </p>
-                <p className="text-lg text-ravnaq-gray leading-relaxed">
+                </motion.p>
+                <motion.p variants={fadeRightVariant} className="text-lg text-ravnaq-gray leading-relaxed">
                   Har bir loyihaning hajmi, joylashuvi, qurilish bosqichi, auditoriyasi va mavjud sotuv holatini hisobga olib, individual yondashuvni shakllantiramiz. Bizning asosiy maqsadimiz — quruvchining marketing va sotuv bilan bog'liq bosh og'rig'ini o'z zimmamizga olib, xonadonlarning tezroq va samaraliroq sotilishini ta'minlash.
-                </p>
-                <div className="pt-4">
-                  <a href="#contact" className="inline-block bg-ravnaq-gold text-white font-semibold px-8 py-3 rounded-full hover:bg-ravnaq-gold-hover transition duration-300">
+                </motion.p>
+                <motion.div variants={fadeRightVariant} className="pt-4">
+                  <a href="#contact" className="inline-block bg-ravnaq-gold text-white font-semibold px-8 py-3 rounded-full hover:bg-ravnaq-gold-hover transition duration-300 shadow-lg hover:-translate-y-1">
                     Bepul diagnostika olish
                   </a>
-                </div>
+                </motion.div>
               </div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[300px] sm:h-[400px] lg:h-[500px]">
+              <motion.div variants={fadeLeftVariant} className="relative rounded-2xl overflow-hidden shadow-2xl h-[300px] sm:h-[400px] lg:h-[500px]">
                 <img 
                   src="/pictures/rt4y5ui.png" 
                   alt="Office Meeting" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Problems Section */}
         <section className="py-24 bg-ravnaq-light-bg overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+          <motion.div 
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16"
+            variants={fadeUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark max-w-3xl mx-auto">
               Qurilishda sotuvni sekinlashtiradigan<br/>6 ta asosiy muammo
             </h2>
-          </div>
+          </motion.div>
 
           {/* Marquee container with blur edges via mask */}
-          <div
+          <motion.div
             className="relative"
+            variants={fadeUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             style={{
               maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)',
               WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)',
@@ -375,13 +429,19 @@ export default function App() {
               })()}
               </div>
             </Marquee>
-          </div>
+          </motion.div>
 
-          <div className="mt-12 text-center">
-            <a href="#contact" className="inline-block bg-ravnaq-gold text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-ravnaq-gold-hover transition duration-300">
+          <motion.div 
+            className="mt-12 text-center"
+            variants={fadeUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.8 }}
+          >
+            <a href="#contact" className="inline-block bg-ravnaq-gold text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-ravnaq-gold-hover transition duration-300 hover:-translate-y-1">
               Bepul diagnostika olish
             </a>
-          </div>
+          </motion.div>
         </section>
 
 
@@ -391,7 +451,13 @@ export default function App() {
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#e5e7eb 1px, transparent 1px)', backgroundSize: '40px 40px', opacity: 0.5 }}></div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="flex flex-col sm:flex-row justify-between sm:items-end mb-8 sm:mb-12 gap-6">
+            <motion.div 
+              className="flex flex-col sm:flex-row justify-between sm:items-end mb-8 sm:mb-12 gap-6"
+              variants={fadeUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+            >
               <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark text-center sm:text-left">Biz qurgan tizim – real<br className="hidden sm:block"/>natijalarda</h2>
               <div className="flex gap-2 justify-center sm:justify-start">
                 <button className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-ravnaq-dark hover:text-white transition hover:border-ravnaq-dark">
@@ -401,11 +467,17 @@ export default function App() {
                   <ChevronRight size={20} />
                 </button>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <motion.div 
+              className="grid md:grid-cols-2 gap-8"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
               {/* Card 1 */}
-              <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-xl flex flex-col">
+              <motion.div variants={fadeUpVariant} className="bg-white border border-gray-100 rounded-3xl p-8 shadow-xl flex flex-col hover:-translate-y-2 transition-transform duration-300">
                 <h3 className="text-xl font-bold text-ravnaq-dark uppercase">NUMAN GROUP</h3>
                 <p className="text-sm text-ravnaq-gray mb-8">CITY PARK RESIDENCE</p>
                 
@@ -429,10 +501,10 @@ export default function App() {
                     Ko'rish <ArrowRight size={16} />
                   </button>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Card 2 */}
-              <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-xl flex flex-col">
+              <motion.div variants={fadeUpVariant} className="bg-white border border-gray-100 rounded-3xl p-8 shadow-xl flex flex-col hover:-translate-y-2 transition-transform duration-300">
                 <h3 className="text-xl font-bold text-ravnaq-dark uppercase">TURON UYLARI</h3>
                 <p className="text-sm text-ravnaq-gray mb-8">Ko'chmas mulk</p>
                 
@@ -456,29 +528,47 @@ export default function App() {
                     Ko'rish <ArrowRight size={16} />
                   </button>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="mt-12 text-center">
-              <a href="#contact" className="inline-block bg-ravnaq-gold text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-ravnaq-gold-hover transition duration-300">
+            <motion.div 
+              className="mt-12 text-center"
+              variants={fadeUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.8 }}
+            >
+              <a href="#contact" className="inline-block bg-ravnaq-gold text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-ravnaq-gold-hover transition duration-300 hover:-translate-y-1">
                 Bepul diagnostika olish
               </a>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Services Section */}
         <section className="py-24 bg-ravnaq-black text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+          <motion.div 
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16"
+            variants={fadeUpVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-4">XIZMATLARIMIZ</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Obyektingizni sotishga ishlaydigan 5 tizim<br/>
               Har bir xizmat alohida emas - barchasi bitta maqsadga ko'proq xaridor jalb qilishga ishlaydi.
             </p>
-          </div>
+          </motion.div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <motion.div 
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
               {[
                 { title: "Quruvchi shaxsiy brendi", desc: "Quruvchini ekspert sifatida pozitsiyalab, uning shaxsiy brendi orqali loyihaga ishonch va sotuv yaratamiz." },
                 { title: "SMM & Media Production", desc: "Loyihani kontent orqali qadoqlaymiz. Reels, foto, video, dizayn va obyektning sotuvchi kontentini yaratamiz." },
@@ -487,7 +577,7 @@ export default function App() {
                 { title: "Zapusk", desc: "Yangi qurilish loyihasini bozorga chiqarishdan sotuvning faol bosqichigacha bo'lgan launch jarayonini ishlab chiqamiz va boshqaramiz." },
                 { title: "Sotuv bo'limi", desc: "ROP, sotuvchilar, skriptlar, KPI va nazorat tizimini yo'lga qo'yib, obyekt uchun tayyor sotuv bo'limini shakllantiramiz." }
               ].map((item, idx) => (
-                <div key={idx} className="bg-white text-ravnaq-dark rounded-2xl p-6 shadow-lg relative group overflow-hidden">
+                <motion.div variants={fadeUpVariant} key={idx} className="bg-white text-ravnaq-dark rounded-2xl p-6 shadow-lg relative group overflow-hidden hover:-translate-y-2 transition-transform duration-300">
                    <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center mb-6">
                      <CheckCircle2 size={20} className="text-ravnaq-gold"/>
                    </div>
@@ -496,7 +586,7 @@ export default function App() {
                    <div className="absolute top-6 right-6 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all text-ravnaq-gold">
                       <ArrowRight size={20} className="-rotate-45" />
                    </div>
-                </div>
+                </motion.div>
               ))}
             </div>
 
@@ -511,8 +601,14 @@ export default function App() {
         {/* FAQ Section */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-12 gap-12">
-              <div className="lg:col-span-5 text-center lg:text-left">
+            <motion.div 
+              className="grid lg:grid-cols-12 gap-12"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <motion.div variants={fadeRightVariant} className="lg:col-span-5 text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark mb-10 lg:mb-12">Eng ko'p beriladigan<br className="hidden lg:block"/>savollar</h2>
                 
                 <div className="space-y-6">
@@ -579,17 +675,29 @@ export default function App() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             {/* Title — top left */}
-            <div className="mb-12 max-w-sm">
+            <motion.div 
+              className="mb-12 max-w-sm"
+              variants={fadeRightVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+            >
               <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
                 Keling, biznesingiz haqida gaplashamiz
               </h2>
               <p className="text-gray-400 text-sm leading-relaxed">
                 Ma'lumotlaringizni qoldiring — mutaxassisimiz siz bilan tez orada bog'lanadi.
               </p>
-            </div>
+            </motion.div>
 
             {/* Single Merged Card */}
-            <div className="bg-white text-ravnaq-dark rounded-[28px] p-6 sm:p-10 shadow-2xl flex flex-col md:flex-row max-w-[1000px] mx-auto">
+            <motion.div 
+              className="bg-white text-ravnaq-dark rounded-[28px] p-6 sm:p-10 shadow-2xl flex flex-col md:flex-row max-w-[1000px] mx-auto"
+              variants={fadeUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
               
               {/* Left Side — BOG'LANISH + map */}
               <div className="flex-1 flex flex-col gap-6 md:pr-10">
@@ -731,7 +839,7 @@ export default function App() {
                   </form>
                 )}
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
       </main>
