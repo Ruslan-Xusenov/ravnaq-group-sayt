@@ -257,7 +257,7 @@ export default function App() {
                     { name: 'Turon Uylari', src: '/pictures/turon.png' },
                     { name: 'MB Meros', src: '/pictures/mezzon.png' },
                   ].map((logo, index) => (
-                    <div key={index} className="flex justify-center items-center w-[160px] md:w-[200px] h-[140px] md:h-[160px] shrink-0 p-2 sm:p-4 bg-white rounded-[16px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-gray-50">
+                    <div key={index} className="flex justify-center items-center w-[160px] md:w-[200px] h-[140px] md:h-[160px] shrink-0 p-2 sm:p-4 bg-[#1a2332] rounded-[16px] shadow-[0_8px_20px_rgba(26,35,50,0.15)] border border-[#d4af37]/20 transition-transform duration-300 hover:-translate-y-1">
                       <img src={logo.src} alt={logo.name} className="max-w-[90%] max-h-[90%] object-contain" />
                     </div>
                   ))}
