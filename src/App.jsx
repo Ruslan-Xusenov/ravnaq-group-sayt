@@ -588,7 +588,7 @@ export default function App() {
                    </div>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             <div className="mt-12 text-center">
               <a href="#contact" className="inline-block bg-ravnaq-gold text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-ravnaq-gold-hover transition duration-300">
@@ -615,7 +615,7 @@ export default function App() {
                   <img src="/pictures/a056922e920aa4647cba3d490de74b43.jpg" alt="Team meeting" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
                   <img src="/pictures/1463db54173250c425b18faccc17a2dc.jpg" alt="Person wondering" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
                 </div>
-              </div>
+              </motion.div>
               <div className="lg:col-span-7 space-y-4">
                 {faqs.map((faq, idx) => (
                   <div key={idx} className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
@@ -644,7 +644,7 @@ export default function App() {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
