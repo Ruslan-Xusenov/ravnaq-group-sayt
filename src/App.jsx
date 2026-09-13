@@ -102,13 +102,13 @@ export default function App() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentProjectSlide((prev) => (prev + 1) % projectsData.length);
+      setCurrentProjectSlide((prev) => (prev + 1) % (isMobile ? projectsData.length : projectsData.length - 1));
     }, 3000);
     return () => clearInterval(timer);
   }, []);
 
-  const nextProjectSlide = () => setCurrentProjectSlide((prev) => (prev + 1) % projectsData.length);
-  const prevProjectSlide = () => setCurrentProjectSlide((prev) => (prev - 1 + projectsData.length) % projectsData.length);
+  const nextProjectSlide = () => setCurrentProjectSlide((prev) => (prev + 1) % (isMobile ? projectsData.length : projectsData.length - 1));
+  const prevProjectSlide = () => setCurrentProjectSlide((prev) => { const max = isMobile ? projectsData.length : projectsData.length - 1; return (prev - 1 + max) % max; });
 
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -515,7 +515,7 @@ export default function App() {
             >
               <div 
                 className="flex transition-transform duration-500 ease-in-out" 
-                style={{ transform: `translateX(-${currentProjectSlide * (isMobile ? 100 : 50)}%)` }}
+                style={{ transform: `translateX(calc(-${currentProjectSlide} * (100% / ${projectsData.length})))` }}
               >
                 {projectsData.map((project, idx) => (
                   <div key={idx} className="w-full md:w-1/2 shrink-0 px-4">
