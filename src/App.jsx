@@ -100,15 +100,17 @@ export default function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+    const maxSlide = isMobile ? projectsData.length - 1 : Math.max(0, projectsData.length - 2);
+
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentProjectSlide((prev) => (prev + 1) % (isMobile ? projectsData.length : projectsData.length - 1));
+      setCurrentProjectSlide((prev) => (prev >= maxSlide ? 0 : prev + 1));
     }, 3000);
     return () => clearInterval(timer);
-  }, []);
+  }, [maxSlide]);
 
-  const nextProjectSlide = () => setCurrentProjectSlide((prev) => (prev + 1) % (isMobile ? projectsData.length : projectsData.length - 1));
-  const prevProjectSlide = () => setCurrentProjectSlide((prev) => { const max = isMobile ? projectsData.length : projectsData.length - 1; return (prev - 1 + max) % max; });
+  const nextProjectSlide = () => setCurrentProjectSlide((prev) => (prev >= maxSlide ? 0 : prev + 1));
+  const prevProjectSlide = () => setCurrentProjectSlide((prev) => (prev <= 0 ? maxSlide : prev - 1));
 
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -515,7 +517,7 @@ export default function App() {
             >
               <div 
                 className="flex transition-transform duration-500 ease-in-out" 
-                style={{ transform: `translateX(calc(-${currentProjectSlide} * (100% / ${projectsData.length})))` }}
+                style={{ transform: `translateX(-${currentProjectSlide * (isMobile ? 100 : 50)}%)` }}
               >
                 {projectsData.map((project, idx) => (
                   <div key={idx} className="w-full md:w-1/2 shrink-0 px-4">
