@@ -524,38 +524,47 @@ export default function App() {
               >
                 {projectsData.map((project, idx) => (
                   <div key={idx} className="w-full md:w-1/2 shrink-0 px-4">
-                    <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
-                      <h3 className="text-xl font-bold text-ravnaq-dark uppercase">{project.title}</h3>
-                      <p className="text-sm text-ravnaq-gray mb-8">{project.subtitle}</p>
+                    <div className="group relative bg-white/70 backdrop-blur-lg border border-white/40 rounded-3xl p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col h-full hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+                      {/* Decorative emotional glow */}
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-ravnaq-gold/10 to-transparent rounded-full blur-3xl -mr-20 -mt-20 transition-transform duration-700 group-hover:scale-150 pointer-events-none"></div>
+
+                      <div className="relative z-10">
+                        <h3 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-ravnaq-dark to-gray-600 tracking-tight uppercase mb-1">{project.title}</h3>
+                        <p className="text-sm font-medium text-ravnaq-gray/80 tracking-wide uppercase mb-8">{project.subtitle}</p>
+                      </div>
                       
-                      <div className="grid grid-cols-2 gap-y-8 flex-1">
-                        <div>
-                          <div className="text-3xl font-bold text-ravnaq-dark">{project.value1}</div>
-                          <div className="text-sm text-ravnaq-gray">{project.label1}</div>
+                      <div className="grid grid-cols-2 gap-y-8 flex-1 relative z-10">
+                        <div className="flex flex-col justify-center">
+                          <div className="text-4xl font-black text-ravnaq-dark tracking-tighter mb-1">{project.value1}</div>
+                          <div className="text-sm font-semibold text-ravnaq-gray uppercase tracking-wider">{project.label1}</div>
                         </div>
-                        <div className="row-span-2 flex justify-end items-stretch h-full w-full">
+                        <div className="row-span-2 flex justify-end items-stretch h-full w-full relative">
                            {project.video ? (
-                             <video 
-                               src={project.video} 
-                               className="w-full h-48 sm:h-64 md:h-72 object-cover rounded-2xl shadow-lg ml-4"
-                               autoPlay 
-                               muted 
-                               loop 
-                               playsInline
-                             />
+                             <div className="relative w-full h-48 sm:h-64 md:h-72 ml-4 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-shadow duration-500 border border-white/50">
+                               <video 
+                                 src={project.video} 
+                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                 autoPlay 
+                                 muted 
+                                 loop 
+                                 playsInline
+                               />
+                               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                             </div>
                            ) : (
-                             <div className="w-32 h-32 opacity-20 self-center" style={{ backgroundImage: 'radial-gradient(#0F172A 2px, transparent 2px)', backgroundSize: '12px 12px' }}></div>
+                             <div className="w-32 h-32 opacity-20 self-center transition-opacity duration-500 group-hover:opacity-40" style={{ backgroundImage: 'radial-gradient(#0F172A 2px, transparent 2px)', backgroundSize: '12px 12px' }}></div>
                            )}
                         </div>
-                        <div>
-                          <div className="text-3xl font-bold text-ravnaq-dark">{project.value2}</div>
-                          <div className="text-sm text-ravnaq-gray">{project.label2}</div>
+                        <div className="flex flex-col justify-center">
+                          <div className="text-4xl font-black text-ravnaq-dark tracking-tighter mb-1">{project.value2}</div>
+                          <div className="text-sm font-semibold text-ravnaq-gray uppercase tracking-wider">{project.label2}</div>
                         </div>
                       </div>
 
-                      <div className="mt-8">
-                        <a href="https://www.instagram.com/ravnaq.group" target="_blank" rel="noopener noreferrer" className="bg-ravnaq-gold text-white font-medium px-6 py-2 rounded-full text-sm inline-flex items-center gap-2 hover:bg-ravnaq-gold-hover transition">
-                          Ko'rish <ArrowRight size={16} />
+                      <div className="mt-10 relative z-10">
+                        <a href="https://www.instagram.com/ravnaq.group" target="_blank" rel="noopener noreferrer" className="group/btn bg-ravnaq-dark text-white font-semibold px-8 py-3 rounded-full text-sm inline-flex items-center gap-3 hover:bg-ravnaq-gold transition-colors duration-300 shadow-md hover:shadow-xl">
+                          Ko'rish 
+                          <ArrowRight size={18} className="transform group-hover/btn:translate-x-1 transition-transform duration-300" />
                         </a>
                       </div>
                     </div>
