@@ -1,6 +1,16 @@
-import React, { useState, Suspense, lazy } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import { Phone, ArrowRight, ChevronDown, CheckCircle2, ChevronLeft, ChevronRight, Menu, X, Triangle, Building, Building2, Landmark, Diamond, User, Briefcase, Settings, Link as LinkIcon, Send } from "lucide-react";
 const PremiumMap = lazy(() => import("./PremiumMap"));
+
+const projectsData = [
+  { title: "NUMAN GROUP", subtitle: "CITY PARK RESIDENCE", value1: "200 mlrd+", label1: "sotuv", value2: "400 ta", label2: "uy sotildi" },
+  { title: "TURON UYLARI", subtitle: "Ko'chmas mulk", value1: "300 mlrd+", label1: "sotuv", value2: "500 ta", label2: "uy sotildi" },
+  { title: "YANGI ASR UYLARI", subtitle: "Turar joy majmuasi", value1: "150 mlrd+", label1: "sotuv", value2: "250 ta", label2: "uy sotildi" },
+  { title: "OLTINSOY CITY", subtitle: "Zamonaviy shahar", value1: "450 mlrd+", label1: "sotuv", value2: "600 ta", label2: "uy sotildi" },
+  { title: "MB MEROS", subtitle: "Tijorat maydonlari", value1: "100 mlrd+", label1: "sotuv", value2: "150 ta", label2: "obyekt sotildi" },
+  { title: "PIRAMIT TOWER", subtitle: "Biznes markaz", value1: "120 mlrd+", label1: "sotuv", value2: "80 ta", label2: "ofis sotildi" }
+];
+
 import { motion, AnimatePresence } from "framer-motion";
 import CountUpPkg from "react-countup";
 const CountUp = CountUpPkg.default || CountUpPkg;
@@ -80,6 +90,26 @@ export default function App() {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
+
+  const [currentProjectSlide, setCurrentProjectSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentProjectSlide((prev) => (prev + 1) % projectsData.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextProjectSlide = () => setCurrentProjectSlide((prev) => (prev + 1) % projectsData.length);
+  const prevProjectSlide = () => setCurrentProjectSlide((prev) => (prev - 1 + projectsData.length) % projectsData.length);
+
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -467,75 +497,55 @@ export default function App() {
             >
               <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark text-center sm:text-left">Biz qurgan tizim – real<br className="hidden sm:block"/>natijalarda</h2>
               <div className="flex gap-2 justify-center sm:justify-start">
-                <button aria-label="Oldingi slayd" className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-ravnaq-dark hover:text-white transition hover:border-ravnaq-dark">
+                <button aria-label="Oldingi slayd" onClick={prevProjectSlide} className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-ravnaq-dark hover:text-white transition hover:border-ravnaq-dark">
                   <ChevronLeft size={20} />
                 </button>
-                <button aria-label="Keyingi slayd" className="w-12 h-12 rounded-full border border-ravnaq-dark bg-ravnaq-dark text-white flex items-center justify-center hover:bg-opacity-90 transition">
+                <button aria-label="Keyingi slayd" onClick={nextProjectSlide} className="w-12 h-12 rounded-full border border-ravnaq-dark bg-ravnaq-dark text-white flex items-center justify-center hover:bg-opacity-90 transition">
                   <ChevronRight size={20} />
                 </button>
               </div>
             </motion.div>
 
             <motion.div 
-              className="grid md:grid-cols-2 gap-8"
+              className="overflow-hidden relative"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              {/* Card 1 */}
-              <motion.div variants={fadeUpVariant} className="bg-white border border-gray-100 rounded-3xl p-8 shadow-xl flex flex-col hover:-translate-y-2 transition-transform duration-300">
-                <h3 className="text-xl font-bold text-ravnaq-dark uppercase">NUMAN GROUP</h3>
-                <p className="text-sm text-ravnaq-gray mb-8">CITY PARK RESIDENCE</p>
-                
-                <div className="grid grid-cols-2 gap-y-8 flex-1">
-                  <div>
-                    <div className="text-3xl font-bold text-ravnaq-dark">200 mlrd+</div>
-                    <div className="text-sm text-ravnaq-gray">sotuv</div>
-                  </div>
-                  <div className="row-span-2 flex justify-end items-center">
-                     {/* Pattern Placeholder */}
-                     <div className="w-32 h-32 opacity-20" style={{ backgroundImage: 'radial-gradient(#0F172A 2px, transparent 2px)', backgroundSize: '12px 12px' }}></div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-ravnaq-dark">400 ta</div>
-                    <div className="text-sm text-ravnaq-gray">uy sotildi</div>
-                  </div>
-                </div>
+              <div 
+                className="flex transition-transform duration-500 ease-in-out" 
+                style={{ transform: `translateX(-${currentProjectSlide * (isMobile ? 100 : 50)}%)` }}
+              >
+                {projectsData.map((project, idx) => (
+                  <div key={idx} className="w-full md:w-1/2 shrink-0 px-4">
+                    <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                      <h3 className="text-xl font-bold text-ravnaq-dark uppercase">{project.title}</h3>
+                      <p className="text-sm text-ravnaq-gray mb-8">{project.subtitle}</p>
+                      
+                      <div className="grid grid-cols-2 gap-y-8 flex-1">
+                        <div>
+                          <div className="text-3xl font-bold text-ravnaq-dark">{project.value1}</div>
+                          <div className="text-sm text-ravnaq-gray">{project.label1}</div>
+                        </div>
+                        <div className="row-span-2 flex justify-end items-center">
+                           <div className="w-32 h-32 opacity-20" style={{ backgroundImage: 'radial-gradient(#0F172A 2px, transparent 2px)', backgroundSize: '12px 12px' }}></div>
+                        </div>
+                        <div>
+                          <div className="text-3xl font-bold text-ravnaq-dark">{project.value2}</div>
+                          <div className="text-sm text-ravnaq-gray">{project.label2}</div>
+                        </div>
+                      </div>
 
-                <div className="mt-8">
-                  <button className="bg-ravnaq-gold text-white font-medium px-6 py-2 rounded-full text-sm inline-flex items-center gap-2 hover:bg-ravnaq-gold-hover transition">
-                    Ko'rish <ArrowRight size={16} />
-                  </button>
-                </div>
-              </motion.div>
-
-              {/* Card 2 */}
-              <motion.div variants={fadeUpVariant} className="bg-white border border-gray-100 rounded-3xl p-8 shadow-xl flex flex-col hover:-translate-y-2 transition-transform duration-300">
-                <h3 className="text-xl font-bold text-ravnaq-dark uppercase">TURON UYLARI</h3>
-                <p className="text-sm text-ravnaq-gray mb-8">Ko'chmas mulk</p>
-                
-                <div className="grid grid-cols-2 gap-y-8 flex-1">
-                  <div>
-                    <div className="text-3xl font-bold text-ravnaq-dark">300 mlrd+</div>
-                    <div className="text-sm text-ravnaq-gray">sotuv</div>
+                      <div className="mt-8">
+                        <button className="bg-ravnaq-gold text-white font-medium px-6 py-2 rounded-full text-sm inline-flex items-center gap-2 hover:bg-ravnaq-gold-hover transition">
+                          Ko'rish <ArrowRight size={16} />
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <div className="row-span-2 flex justify-end items-center">
-                     {/* Pattern Placeholder */}
-                     <div className="w-32 h-32 opacity-20" style={{ backgroundImage: 'radial-gradient(#0F172A 2px, transparent 2px)', backgroundSize: '12px 12px' }}></div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-ravnaq-dark">500 ta</div>
-                    <div className="text-sm text-ravnaq-gray">uy sotildi</div>
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <button className="bg-ravnaq-gold text-white font-medium px-6 py-2 rounded-full text-sm inline-flex items-center gap-2 hover:bg-ravnaq-gold-hover transition">
-                    Ko'rish <ArrowRight size={16} />
-                  </button>
-                </div>
-              </motion.div>
+                ))}
+              </div>
             </motion.div>
 
             <motion.div 
