@@ -533,18 +533,18 @@ export default function App() {
                           <div className="text-3xl font-bold text-ravnaq-dark">{project.value1}</div>
                           <div className="text-sm text-ravnaq-gray">{project.label1}</div>
                         </div>
-                        <div className="row-span-2 flex justify-end items-center">
+                        <div className="row-span-2 flex justify-end items-stretch h-full w-full">
                            {project.video ? (
                              <video 
                                src={project.video} 
-                               className="w-40 h-40 sm:w-48 sm:h-48 object-cover rounded-2xl shadow-lg"
+                               className="w-full h-48 sm:h-64 md:h-72 object-cover rounded-2xl shadow-lg ml-4"
                                autoPlay 
                                muted 
                                loop 
                                playsInline
                              />
                            ) : (
-                             <div className="w-32 h-32 opacity-20" style={{ backgroundImage: 'radial-gradient(#0F172A 2px, transparent 2px)', backgroundSize: '12px 12px' }}></div>
+                             <div className="w-32 h-32 opacity-20 self-center" style={{ backgroundImage: 'radial-gradient(#0F172A 2px, transparent 2px)', backgroundSize: '12px 12px' }}></div>
                            )}
                         </div>
                         <div>
