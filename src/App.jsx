@@ -142,12 +142,25 @@ export default function App() {
   ];
 
   const [isLoading, setIsLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Animate progress bar
+    const interval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) { clearInterval(interval); return 100; }
+        return prev + 2;
+      });
+    }, 40); // 40ms * 50 steps = 2000ms total
+
     const splashTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 2200);
-    return () => clearTimeout(splashTimer);
+    }, 2400);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(splashTimer);
+    };
   }, []);
 
   return (
@@ -156,23 +169,54 @@ export default function App() {
         {isLoading && (
           <motion.div
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-white/95 backdrop-blur-md"
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
+            style={{ background: "linear-gradient(135deg, #0a0a0f 0%, #111118 50%, #0f0f17 100%)" }}
           >
+            {/* Ambient gold glow behind logo */}
             <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 0.18, scale: 1.4 }}
+              transition={{ duration: 2, ease: "easeOut" }}
+              className="absolute w-96 h-96 rounded-full pointer-events-none"
+              style={{ background: "radial-gradient(circle, #C8A96E 0%, transparent 70%)" }}
+            />
+
+            {/* Logo */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="relative z-10 mb-16"
             >
-              <motion.img
+              <img
                 src="/ravnaq-logo.png"
                 alt="Ravnaq Group"
-                className="w-40 sm:w-56 h-auto"
-                initial={{ rotateY: -360, scale: 0.8 }}
-                animate={{ rotateY: 0, scale: 1 }}
-                transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }} /* Custom smooth cubic-bezier for a premium feel */
+                className="w-36 sm:w-48 h-auto"
+                style={{ filter: "brightness(0) invert(1)" }}
               />
+            </motion.div>
+
+            {/* Progress bar */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="relative z-10 w-48 sm:w-64"
+            >
+              {/* Track */}
+              <div className="w-full h-[1px] bg-white/10 rounded-full overflow-hidden">
+                {/* Fill */}
+                <motion.div
+                  className="h-full rounded-full"
+                  style={{
+                    width: `${progress}%`,
+                    background: "linear-gradient(90deg, #C8A96E, #f0d48a)",
+                    boxShadow: "0 0 8px rgba(200, 169, 110, 0.6)"
+                  }}
+                />
+              </div>
             </motion.div>
           </motion.div>
         )}
