@@ -537,7 +537,7 @@ export default function App() {
                            {project.video ? (
                              <video 
                                src={project.video} 
-                               className="w-32 h-32 object-cover rounded-xl shadow-md"
+                               className="w-40 h-40 sm:w-48 sm:h-48 object-cover rounded-2xl shadow-lg"
                                autoPlay 
                                muted 
                                loop 
