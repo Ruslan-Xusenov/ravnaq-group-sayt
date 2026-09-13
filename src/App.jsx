@@ -3,7 +3,7 @@ import { Phone, ArrowRight, ChevronDown, CheckCircle2, ChevronLeft, ChevronRight
 const PremiumMap = lazy(() => import("./PremiumMap"));
 
 const projectsData = [
-  { title: "OLTINSOY CITY", subtitle: "Turar joy majmuasi", value1: "35 mlrd+", label1: "sotuv", value2: "100 ta", label2: "uy sotildi" },
+  { title: "OLTINSOY CITY", subtitle: "Turar joy majmuasi", value1: "35 mlrd+", label1: "sotuv", value2: "100 ta", label2: "uy sotildi", video: "/oltinsoy-carusel.mp4" },
   { title: "ECO TOWER", subtitle: "Turar joy majmuasi", value1: "87,5 mlrd+", label1: "sotuv", value2: "250 ta", label2: "uy sotildi" },
   { title: "YAQINLAR", subtitle: "Turar joy majmuasi", value1: "70 mlrd+", label1: "sotuv", value2: "200 ta", label2: "uy sotildi" },
   { title: "BEKOBOD TURON", subtitle: "Turar joy majmuasi", value1: "17,5 mlrd+", label1: "sotuv", value2: "50 ta", label2: "uy sotildi" },
@@ -534,7 +534,18 @@ export default function App() {
                           <div className="text-sm text-ravnaq-gray">{project.label1}</div>
                         </div>
                         <div className="row-span-2 flex justify-end items-center">
-                           <div className="w-32 h-32 opacity-20" style={{ backgroundImage: 'radial-gradient(#0F172A 2px, transparent 2px)', backgroundSize: '12px 12px' }}></div>
+                           {project.video ? (
+                             <video 
+                               src={project.video} 
+                               className="w-32 h-32 object-cover rounded-xl shadow-md"
+                               autoPlay 
+                               muted 
+                               loop 
+                               playsInline
+                             />
+                           ) : (
+                             <div className="w-32 h-32 opacity-20" style={{ backgroundImage: 'radial-gradient(#0F172A 2px, transparent 2px)', backgroundSize: '12px 12px' }}></div>
+                           )}
                         </div>
                         <div>
                           <div className="text-3xl font-bold text-ravnaq-dark">{project.value2}</div>
