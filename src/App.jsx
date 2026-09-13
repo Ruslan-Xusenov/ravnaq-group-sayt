@@ -3,6 +3,7 @@ import { Phone, ArrowRight, ChevronDown, CheckCircle2, ChevronLeft, ChevronRight
 const PremiumMap = lazy(() => import("./PremiumMap"));
 
 const projectsData = [
+  { title: "NUMAN GROUP", subtitle: "Asosiy kompaniya", value1: "2 trln+", label1: "sotuv", value2: "4500 ta", label2: "shartnoma", video: "/numan-group-carusel.mp4" },
   { title: "OLTINSOY CITY", subtitle: "Turar joy majmuasi", value1: "35 mlrd+", label1: "sotuv", value2: "100 ta", label2: "uy sotildi", video: "/oltinsoy-carusel.mp4" },
   { title: "ECO TOWER", subtitle: "Turar joy majmuasi", value1: "87,5 mlrd+", label1: "sotuv", value2: "250 ta", label2: "uy sotildi" },
   { title: "YAQINLAR", subtitle: "Turar joy majmuasi", value1: "70 mlrd+", label1: "sotuv", value2: "200 ta", label2: "uy sotildi" },
