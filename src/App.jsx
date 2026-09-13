@@ -3,12 +3,15 @@ import { Phone, ArrowRight, ChevronDown, CheckCircle2, ChevronLeft, ChevronRight
 const PremiumMap = lazy(() => import("./PremiumMap"));
 
 const projectsData = [
-  { title: "NUMAN GROUP", subtitle: "CITY PARK RESIDENCE", value1: "200 mlrd+", label1: "sotuv", value2: "400 ta", label2: "uy sotildi" },
-  { title: "TURON UYLARI", subtitle: "Ko'chmas mulk", value1: "300 mlrd+", label1: "sotuv", value2: "500 ta", label2: "uy sotildi" },
-  { title: "YANGI ASR UYLARI", subtitle: "Turar joy majmuasi", value1: "150 mlrd+", label1: "sotuv", value2: "250 ta", label2: "uy sotildi" },
-  { title: "OLTINSOY CITY", subtitle: "Zamonaviy shahar", value1: "450 mlrd+", label1: "sotuv", value2: "600 ta", label2: "uy sotildi" },
-  { title: "MB MEROS", subtitle: "Tijorat maydonlari", value1: "100 mlrd+", label1: "sotuv", value2: "150 ta", label2: "obyekt sotildi" },
-  { title: "PIRAMIT TOWER", subtitle: "Biznes markaz", value1: "120 mlrd+", label1: "sotuv", value2: "80 ta", label2: "ofis sotildi" }
+  { title: "OLTINSOY CITY", subtitle: "Turar joy majmuasi", value1: "35 mlrd+", label1: "sotuv", value2: "100 ta", label2: "uy sotildi" },
+  { title: "ECO TOWER", subtitle: "Turar joy majmuasi", value1: "87,5 mlrd+", label1: "sotuv", value2: "250 ta", label2: "uy sotildi" },
+  { title: "YAQINLAR", subtitle: "Turar joy majmuasi", value1: "70 mlrd+", label1: "sotuv", value2: "200 ta", label2: "uy sotildi" },
+  { title: "BEKOBOD TURON", subtitle: "Turar joy majmuasi", value1: "17,5 mlrd+", label1: "sotuv", value2: "50 ta", label2: "uy sotildi" },
+  { title: "SHIRIN", subtitle: "Turar joy majmuasi", value1: "350 mlrd+", label1: "sotuv", value2: "1000 ta", label2: "uy sotildi" },
+  { title: "BARAKA", subtitle: "Turar joy majmuasi", value1: "52,5 mlrd+", label1: "sotuv", value2: "150 ta", label2: "uy sotildi" },
+  { title: "TXT VA BOSHQALAR", subtitle: "Turar joy majmuasi", value1: "875 mlrd+", label1: "sotuv", value2: "2500 ta", label2: "uy sotildi" },
+  { title: "PAYSHANBA", subtitle: "Turar joy majmuasi", value1: "31,5 mlrd+", label1: "sotuv", value2: "90 ta", label2: "uy sotildi" },
+  { title: "SOHILBO'YI", subtitle: "Turar joy majmuasi", value1: "105 mlrd+", label1: "sotuv", value2: "300 ta", label2: "uy sotildi" }
 ];
 
 import { motion, AnimatePresence } from "framer-motion";
