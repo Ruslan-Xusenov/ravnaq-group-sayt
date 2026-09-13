@@ -178,12 +178,7 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.98, y: 20 }}
-        animate={!isLoading ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.98, y: 20 }}
-        transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        className="min-h-screen font-sans bg-ravnaq-light-bg text-ravnaq-black"
-      >
+      <div className="min-h-screen font-sans bg-ravnaq-light-bg text-ravnaq-black">
         {/* Header */}
       <header className="absolute top-0 left-0 right-0 z-50">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative">
@@ -929,7 +924,7 @@ export default function App() {
           </div>
         </section>
       </main>
-      </motion.div>
+      </div>
     </>
   );
 }
