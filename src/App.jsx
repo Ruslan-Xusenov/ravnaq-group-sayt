@@ -146,7 +146,7 @@ export default function App() {
   useEffect(() => {
     const splashTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 2200);
     return () => clearTimeout(splashTimer);
   }, []);
 
@@ -156,26 +156,32 @@ export default function App() {
         {isLoading && (
           <motion.div
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-white"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-white/95 backdrop-blur-md"
           >
-            <motion.img
-              src="/ravnaq-logo.png"
-              alt="Ravnaq Group"
-              className="w-48 sm:w-64 h-auto"
-              initial={{ opacity: 0, y: 100, rotate: -360 }}
-              animate={{ opacity: 1, y: 0, rotate: 0 }}
-              transition={{ duration: 1.2, type: "spring", bounce: 0.4 }}
-            />
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <motion.img
+                src="/ravnaq-logo.png"
+                alt="Ravnaq Group"
+                className="w-40 sm:w-56 h-auto"
+                initial={{ rotateY: -360, scale: 0.8 }}
+                animate={{ rotateY: 0, scale: 1 }}
+                transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }} /* Custom smooth cubic-bezier for a premium feel */
+              />
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
       <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={!isLoading ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+        initial={{ opacity: 0, scale: 0.98, y: 20 }}
+        animate={!isLoading ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.98, y: 20 }}
+        transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         className="min-h-screen font-sans bg-ravnaq-light-bg text-ravnaq-black"
       >
         {/* Header */}
