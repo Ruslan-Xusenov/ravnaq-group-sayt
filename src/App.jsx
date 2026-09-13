@@ -543,9 +543,9 @@ export default function App() {
                       </div>
 
                       <div className="mt-8">
-                        <button className="bg-ravnaq-gold text-white font-medium px-6 py-2 rounded-full text-sm inline-flex items-center gap-2 hover:bg-ravnaq-gold-hover transition">
+                        <a href="https://www.instagram.com/ravnaq.group" target="_blank" rel="noopener noreferrer" className="bg-ravnaq-gold text-white font-medium px-6 py-2 rounded-full text-sm inline-flex items-center gap-2 hover:bg-ravnaq-gold-hover transition">
                           Ko'rish <ArrowRight size={16} />
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>
