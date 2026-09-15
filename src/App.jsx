@@ -12,7 +12,7 @@ const projectsData = [
   { title: "BARAKA", subtitle: "Turar joy majmuasi", value1: "52,5 mlrd+", label1: "sotuv", value2: "150 ta", label2: "uy sotildi", logo: "/logos/logo5.png" },
   { title: "TXT GROUP", subtitle: "Turar joy majmuasi", value1: "875 mlrd+", label1: "sotuv", value2: "2500 ta", label2: "uy sotildi", logo: "/logos/logo6.png" },
   { title: "PAYSHANBA", subtitle: "Turar joy majmuasi", value1: "31,5 mlrd+", label1: "sotuv", value2: "90 ta", label2: "uy sotildi", logo: "/logos/logo7.png" },
-  { title: "SOHILBO'YI", subtitle: "Turar joy majmuasi", value1: "105 mlrd+", label1: "sotuv", value2: "300 ta", label2: "uy sotildi", logo: "/logos/logo1.png" }
+  { title: "SOHILBO'YI", subtitle: "Turar joy majmuasi", value1: "105 mlrd+", label1: "sotuv", value2: "300 ta", label2: "uy sotildi", logo: "/logos/logo1.png", darkLogoBg: true }
 ];
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -634,7 +634,7 @@ export default function App() {
                              </div>
                            ) : project.logo ? (
                              <div className="flex items-center justify-center ml-4 self-center w-full">
-                               <div className="bg-gray-50 border border-gray-100 rounded-2xl p-4 shadow-sm group-hover:shadow-md transition-shadow duration-300 flex items-center justify-center w-36 h-36">
+                               <div className={`${project.darkLogoBg ? 'bg-slate-900 border-slate-800' : 'bg-gray-50 border-gray-100'} rounded-2xl p-4 shadow-sm group-hover:shadow-md transition-shadow duration-300 flex items-center justify-center w-36 h-36`}>
                                  <img
                                    src={project.logo}
                                    alt={project.title}
