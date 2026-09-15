@@ -11,7 +11,7 @@ const projectsData = [
   { title: "SHIRIN", subtitle: "Turar joy majmuasi", value1: "350 mlrd+", label1: "sotuv", value2: "1000 ta", label2: "uy sotildi", logo: "/logos/logo4.png" },
   { title: "BARAKA", subtitle: "Turar joy majmuasi", value1: "52,5 mlrd+", label1: "sotuv", value2: "150 ta", label2: "uy sotildi", logo: "/logos/logo4.png", darkLogoBg: true },
   { title: "TXT GROUP", subtitle: "Turar joy majmuasi", value1: "875 mlrd+", label1: "sotuv", value2: "2500 ta", label2: "uy sotildi", logo: "/logos/logo6.png" },
-  { title: "PAYSHANBA", subtitle: "Turar joy majmuasi", value1: "31,5 mlrd+", label1: "sotuv", value2: "90 ta", label2: "uy sotildi", logo: "/logos/logo7.png" },
+  { title: "PAYSHANBA", subtitle: "Turar joy majmuasi", value1: "31,5 mlrd+", label1: "sotuv", value2: "90 ta", label2: "uy sotildi", logo: "/logos/payshanba.png", darkLogoBg: true },
   { title: "SOHILBO'YI", subtitle: "Turar joy majmuasi", value1: "105 mlrd+", label1: "sotuv", value2: "300 ta", label2: "uy sotildi", logo: "/logos/logo1.png", darkLogoBg: true }
 ];
 
