@@ -634,11 +634,13 @@ export default function App() {
                              </div>
                            ) : project.logo ? (
                              <div className="flex items-center justify-center ml-4 self-center w-full">
-                               <img
-                                 src={project.logo}
-                                 alt={project.title}
-                                 className="w-28 sm:w-36 h-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-500 drop-shadow-sm"
-                               />
+                               <div className="bg-gray-50 border border-gray-100 rounded-2xl p-4 shadow-sm group-hover:shadow-md transition-shadow duration-300 flex items-center justify-center w-36 h-36">
+                                 <img
+                                   src={project.logo}
+                                   alt={project.title}
+                                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                                 />
+                               </div>
                              </div>
                            ) : (
                              <div className="w-32 h-32 opacity-20 self-center transition-opacity duration-500 group-hover:opacity-40" style={{ backgroundImage: 'radial-gradient(#0F172A 2px, transparent 2px)', backgroundSize: '12px 12px' }}></div>
