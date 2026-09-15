@@ -3,16 +3,16 @@ import { Phone, ArrowRight, ChevronDown, CheckCircle2, ChevronLeft, ChevronRight
 const PremiumMap = lazy(() => import("./PremiumMap"));
 
 const projectsData = [
-  { title: "NUMAN GROUP", subtitle: "Asosiy kompaniya", value1: "2 trln+", label1: "sotuv", value2: "4500 ta", label2: "shartnoma", video: "/numan-group-carusel.mp4", logo: "/logos/numan.png" },
-  { title: "OLTINSOY CITY", subtitle: "Turar joy majmuasi", value1: "35 mlrd+", label1: "sotuv", value2: "100 ta", label2: "uy sotildi", video: "/oltinsoy-carusel.mp4", logo: "/logos/oltinsoy.png" },
-  { title: "ECO TOWER", subtitle: "Turar joy majmuasi", value1: "87,5 mlrd+", label1: "sotuv", value2: "250 ta", label2: "uy sotildi", logo: "/logos/logo2.png", darkLogoBg: true },
-  { title: "YAQINLAR", subtitle: "Turar joy majmuasi", value1: "70 mlrd+", label1: "sotuv", value2: "200 ta", label2: "uy sotildi", logo: "/logos/logo5.png", darkLogoBg: true },
-  { title: "BEKOBOD TURON", subtitle: "Turar joy majmuasi", value1: "17,5 mlrd+", label1: "sotuv", value2: "50 ta", label2: "uy sotildi", logo: "/logos/logo3.png", darkLogoBg: true },
-  { title: "SHIRIN", subtitle: "Turar joy majmuasi", value1: "350 mlrd+", label1: "sotuv", value2: "1000 ta", label2: "uy sotildi", logo: "/logos/logo4.png" },
-  { title: "BARAKA", subtitle: "Turar joy majmuasi", value1: "52,5 mlrd+", label1: "sotuv", value2: "150 ta", label2: "uy sotildi", logo: "/logos/logo4.png", darkLogoBg: true },
-  { title: "TXT GROUP", subtitle: "Turar joy majmuasi", value1: "875 mlrd+", label1: "sotuv", value2: "2500 ta", label2: "uy sotildi", logo: "/logos/logo6.png" },
-  { title: "PAYSHANBA", subtitle: "Turar joy majmuasi", value1: "31,5 mlrd+", label1: "sotuv", value2: "90 ta", label2: "uy sotildi", logo: "/logos/payshanba.png", darkLogoBg: true },
-  { title: "SOHILBO'YI", subtitle: "Turar joy majmuasi", value1: "105 mlrd+", label1: "sotuv", value2: "300 ta", label2: "uy sotildi", logo: "/logos/logo1.png", darkLogoBg: true }
+  { title: "NUMAN GROUP", subtitle: "Asosiy kompaniya", value1: "2 trln+", label1: "sotuv", value2: "4500 ta", label2: "shartnoma", video: "/numan-group-carusel.mp4", logo: "/logos/numan.webp" },
+  { title: "OLTINSOY CITY", subtitle: "Turar joy majmuasi", value1: "35 mlrd+", label1: "sotuv", value2: "100 ta", label2: "uy sotildi", video: "/oltinsoy-carusel.mp4", logo: "/logos/oltinsoy.webp" },
+  { title: "ECO TOWER", subtitle: "Turar joy majmuasi", value1: "87,5 mlrd+", label1: "sotuv", value2: "250 ta", label2: "uy sotildi", logo: "/logos/logo2.webp", darkLogoBg: true },
+  { title: "YAQINLAR", subtitle: "Turar joy majmuasi", value1: "70 mlrd+", label1: "sotuv", value2: "200 ta", label2: "uy sotildi", logo: "/logos/logo5.webp", darkLogoBg: true },
+  { title: "BEKOBOD TURON", subtitle: "Turar joy majmuasi", value1: "17,5 mlrd+", label1: "sotuv", value2: "50 ta", label2: "uy sotildi", logo: "/logos/logo3.webp", darkLogoBg: true },
+  { title: "SHIRIN", subtitle: "Turar joy majmuasi", value1: "350 mlrd+", label1: "sotuv", value2: "1000 ta", label2: "uy sotildi", logo: "/logos/logo4.webp" },
+  { title: "BARAKA", subtitle: "Turar joy majmuasi", value1: "52,5 mlrd+", label1: "sotuv", value2: "150 ta", label2: "uy sotildi", logo: "/logos/logo4.webp", darkLogoBg: true },
+  { title: "TXT GROUP", subtitle: "Turar joy majmuasi", value1: "875 mlrd+", label1: "sotuv", value2: "2500 ta", label2: "uy sotildi", logo: "/logos/logo6.webp" },
+  { title: "PAYSHANBA", subtitle: "Turar joy majmuasi", value1: "31,5 mlrd+", label1: "sotuv", value2: "90 ta", label2: "uy sotildi", logo: "/logos/payshanba.webp", darkLogoBg: true },
+  { title: "SOHILBO'YI", subtitle: "Turar joy majmuasi", value1: "105 mlrd+", label1: "sotuv", value2: "300 ta", label2: "uy sotildi", logo: "/logos/logo1.webp", darkLogoBg: true }
 ];
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -193,6 +193,7 @@ export default function App() {
               <img
                 src="/ravnaq-logo.png"
                 alt="Ravnaq Group"
+                width="192" height="80"
                 className="w-36 sm:w-48 h-auto"
                 style={{ filter: "brightness(0) invert(1)" }}
               />
@@ -413,7 +414,7 @@ export default function App() {
                     { name: 'MB Meros', src: '/pictures/mezzon.webp' },
                   ].map((logo, index) => (
                     <div key={index} className="flex justify-center items-center w-[160px] md:w-[200px] h-[140px] md:h-[160px] shrink-0 p-2 sm:p-4 bg-[#1a2332] rounded-[16px] shadow-[0_8px_20px_rgba(26,35,50,0.15)] border border-[#d4af37]/20 transition-transform duration-300 hover:-translate-y-1">
-                      <img loading="lazy" src={logo.src} alt={logo.name} className="max-w-[90%] max-h-[90%] object-contain" />
+                      <img loading="lazy" src={logo.src} alt={logo.name} width="160" height="140" className="max-w-[90%] max-h-[90%] object-contain" />
                     </div>
                   ))}
                   </div>
@@ -463,6 +464,7 @@ export default function App() {
                 <img loading="lazy" 
                   src="/pictures/rt4y5ui.webp" 
                   alt="Office Meeting" 
+                  width="600" height="500"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </motion.div>
@@ -540,7 +542,7 @@ export default function App() {
                 return cards.map((item, idx) => (
                   <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-md flex-shrink-0 flex flex-col group hover:shadow-xl transition-shadow duration-300" style={{ width: '300px', marginRight: '24px' }}>
                     <div className="overflow-hidden" style={{ height: '200px' }}>
-                      <img loading="lazy" src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                      <img loading="lazy" src={item.img} alt={item.title} width="300" height="200" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                     </div>
                     <div className="p-5 flex-1 flex flex-col relative">
                       <h3 className="font-bold text-base text-ravnaq-dark mb-2 pr-8 leading-snug">{item.title}</h3>
@@ -629,6 +631,8 @@ export default function App() {
                                  muted 
                                  loop 
                                  playsInline
+                                 preload="none"
+                                 width="400" height="288"
                                />
                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                              </div>
@@ -636,10 +640,12 @@ export default function App() {
                              <div className="flex items-center justify-center ml-4 self-center w-full">
                                <div className={`${project.darkLogoBg ? 'bg-slate-900 border-slate-800' : 'bg-gray-50 border-gray-100'} rounded-2xl p-4 shadow-sm group-hover:shadow-md transition-shadow duration-300 flex items-center justify-center w-36 h-36`}>
                                  <img
-                                   src={project.logo}
-                                   alt={project.title}
-                                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                                 />
+                                    src={project.logo}
+                                    alt={project.title}
+                                    width="144" height="144"
+                                    loading="lazy"
+                                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                                  />
                                </div>
                              </div>
                            ) : (
