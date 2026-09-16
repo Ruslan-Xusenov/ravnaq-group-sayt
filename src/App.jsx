@@ -842,8 +842,8 @@ export default function App() {
               <div className="flex-1 flex flex-col gap-6 md:pr-10">
                 <div>
                   <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500 mb-2">BOG'LANISH</p>
-                  <a href="tel:+998772773765" className="text-3xl font-bold block hover:text-ravnaq-gold transition">
-                    +998 77 277 37 65
+                  <a href="tel:+998916912414" className="text-2xl font-bold block hover:text-ravnaq-gold transition">
+                    +998 91 691-24-14
                   </a>
                 </div>
 
@@ -854,7 +854,7 @@ export default function App() {
                     </div>
                     <div>
                       <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-0.5">TELEGRAM</p>
-                      <p className="text-sm font-semibold text-ravnaq-dark">@ravnaqgroup</p>
+                      <p className="text-sm font-semibold text-ravnaq-dark">@buildence_admin</p>
                     </div>
                   </a>
 
@@ -868,16 +868,14 @@ export default function App() {
                     </div>
                     <div>
                       <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold mb-0.5">INSTAGRAM</p>
-                      <p className="text-sm font-semibold text-ravnaq-dark">@ravnaq.group</p>
+                      <p className="text-sm font-semibold text-ravnaq-dark">@buildence.uz</p>
                     </div>
                   </a>
                 </div>
 
                 {/* Map */}
-                <div className="flex-1 min-h-[160px] rounded-[14px] overflow-hidden">
-                  <Suspense fallback={<div className="h-[400px] bg-gray-100 rounded-3xl animate-pulse flex items-center justify-center text-gray-500">Xarita yuklanmoqda...</div>}>
-                    <PremiumMap />
-                  </Suspense>
+                <div className="flex-1 min-h-[160px] rounded-[14px] overflow-hidden relative">
+                  <img src="/pictures/map-contact.webp" alt="Map" className="w-full h-full object-cover" />
                 </div>
               </div>
 
@@ -905,14 +903,14 @@ export default function App() {
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
                           <User size={16} />
                         </div>
-                        <input aria-label="Ismingiz" name="name" value={form.name} onChange={handleChange} type="text" placeholder="Ismingiz" className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
+                        <input aria-label="Ismingiz" name="name" value={form.name} onChange={handleChange} type="text" placeholder="Ismingiz" className="w-full pl-10 px-4 py-3.5 rounded-[8px] border border-gray-300 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
                       </div>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500 gap-2">
                           <Phone size={16} />
                           <span className="text-gray-500 font-medium text-sm">+998</span>
                         </div>
-                        <input aria-label="Telefon raqamingiz" name="phone" value={form.phone} onChange={handleChange} type="tel" className="w-full pl-24 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
+                        <input aria-label="Telefon raqamingiz" name="phone" value={form.phone} onChange={handleChange} type="tel" placeholder="Telefon raqamingiz" className="w-full pl-24 px-4 py-3.5 rounded-[8px] border border-gray-300 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
                       </div>
                     </div>
                     
@@ -921,13 +919,13 @@ export default function App() {
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
                           <Building size={16} />
                         </div>
-                        <input aria-label="Kompaniyangiz nomi" name="company" value={form.company} onChange={handleChange} type="text" placeholder="Kompaniyangiz nomi" className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
+                        <input aria-label="Kompaniyangiz nomi" name="company" value={form.company} onChange={handleChange} type="text" placeholder="Kompaniyangiz nomi" className="w-full pl-10 px-4 py-3.5 rounded-[8px] border border-gray-300 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
                       </div>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
                           <Briefcase size={16} />
                         </div>
-                        <input aria-label="Lavozimingiz" name="position" value={form.position} onChange={handleChange} type="text" placeholder="Lavozimingiz" className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
+                        <input aria-label="Lavozimingiz" name="position" value={form.position} onChange={handleChange} type="text" placeholder="Lavozimingiz" className="w-full pl-10 px-4 py-3.5 rounded-[8px] border border-gray-300 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
                       </div>
                     </div>
 
@@ -935,8 +933,8 @@ export default function App() {
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
                         <Settings size={16} />
                       </div>
-                      <select aria-label="Sizga qanday xizmat kerak" name="service" value={form.service} onChange={handleChange} className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-gray-500 bg-white text-sm font-medium appearance-none">
-                        <option value="">Qaysi xizmat qiziqtirdi?</option>
+                      <select aria-label="Sizga qanday xizmat kerak" name="service" value={form.service} onChange={handleChange} className="w-full pl-10 px-4 py-3.5 rounded-[8px] border border-gray-300 focus:outline-none focus:border-ravnaq-gold text-gray-500 bg-white text-sm font-medium appearance-none">
+                        <option value="">Qaysi xizmat qiziqtiradi?</option>
                         <option>SMM</option>
                         <option>Lead Generation</option>
                         <option>Sotuv bo'limi</option>
@@ -950,9 +948,12 @@ export default function App() {
 
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
-                        <LinkIcon size={16} />
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="2"></circle>
+                          <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+                        </svg>
                       </div>
-                      <select aria-label="Biz haqimizda qayerdan bildingiz" name="source" value={form.source} onChange={handleChange} className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-gray-500 bg-white text-sm font-medium appearance-none">
+                      <select aria-label="Qayerdan bildingiz?" name="source" value={form.source} onChange={handleChange} className="w-full pl-10 px-4 py-3.5 rounded-[8px] border border-gray-300 focus:outline-none focus:border-ravnaq-gold text-gray-500 bg-white text-sm font-medium appearance-none">
                         <option value="">Qayerdan bildingiz?</option>
                         <option>Instagram</option>
                         <option>Telegram</option>
