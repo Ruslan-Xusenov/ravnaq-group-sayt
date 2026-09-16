@@ -3,7 +3,7 @@ import { Phone, ArrowRight, ChevronDown, CheckCircle2, ChevronLeft, ChevronRight
 const PremiumMap = lazy(() => import("./PremiumMap"));
 
 const projectsData = [
-  { title: "NUMAN GROUP", subtitle: "Asosiy kompaniya", value1: "2 trln+", label1: "sotuv", value2: "4500 ta", label2: "shartnoma", video: "/numan-group-carusel.mp4", logo: "/logos/numan.webp" },
+  { title: "NUMAN GROUP", subtitle: "Asosiy kompaniya", value1: "140 mlrd+", label1: "shartnomalar", value2: "400+ ta", label2: "xonadon sotildi", video: "/numan-group-carusel.mp4", logo: "/logos/numan.webp" },
   { title: "OLTINSOY CITY", subtitle: "Turar joy majmuasi", value1: "35 mlrd+", label1: "sotuv", value2: "100 ta", label2: "uy sotildi", video: "/oltinsoy-carusel.mp4", logo: "/logos/oltinsoy.webp" },
   { title: "ECO TOWER", subtitle: "Turar joy majmuasi", value1: "87,5 mlrd+", label1: "sotuv", value2: "250 ta", label2: "uy sotildi", logo: "/logos/logo2.webp", darkLogoBg: true },
   { title: "YAQINLAR", subtitle: "Turar joy majmuasi", value1: "70 mlrd+", label1: "sotuv", value2: "200 ta", label2: "uy sotildi", logo: "/logos/logo5.webp", darkLogoBg: true },
@@ -695,7 +695,7 @@ export default function App() {
           >
             <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-4">XIZMATLARIMIZ</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Obyektingizni sotishga ishlaydigan 6 tizim<br/>
+              Obyektingizni sotishga ishlaydigan tizim<br/>
               Har bir xizmat alohida emas - barchasi bitta maqsadga: ko'proq va tezroq sotuvga ishlaydi.
             </p>
           </motion.div>
