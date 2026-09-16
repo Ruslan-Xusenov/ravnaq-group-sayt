@@ -788,29 +788,10 @@ export default function App() {
         </section>
 
         {/* Contact Footer Section */}
-        <section id="contact" className="relative bg-ravnaq-black text-white overflow-hidden" style={{ minHeight: '600px' }}>
-
-          {/* Purple vertical bars — right side background */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {[...Array(18)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute bottom-0"
-                style={{
-                  right: `${i * 5}%`,
-                  width: '2px',
-                  height: `${40 + Math.sin(i * 0.8) * 35}%`,
-                  background: `rgba(120, 60, 200, ${0.12 + Math.abs(Math.sin(i * 0.6)) * 0.25})`,
-                  filter: 'blur(1px)',
-                  borderRadius: '2px 2px 0 0',
-                }}
-              />
-            ))}
-            {/* Glow overlay */}
-            <div className="absolute right-0 top-0 bottom-0 w-2/3"
-              style={{ background: 'radial-gradient(ellipse at 80% 50%, rgba(100,40,180,0.18) 0%, transparent 70%)' }}
-            />
-          </div>
+        <section id="contact" className="relative bg-ravnaq-black text-white overflow-hidden bg-cover bg-center" style={{ minHeight: '600px', backgroundImage: 'url("/pictures/contact-bg.webp")' }}>
+          
+          {/* Optional dark overlay to ensure text remains legible */}
+          <div className="absolute inset-0 bg-black/40 pointer-events-none"></div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             {/* Title — top left */}
