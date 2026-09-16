@@ -791,7 +791,7 @@ export default function App() {
         <section id="contact" className="relative bg-ravnaq-black text-white overflow-hidden bg-cover bg-center" style={{ minHeight: '600px', backgroundImage: 'url("/pictures/contact-bg.webp")' }}>
           
           {/* Optional dark overlay to ensure text remains legible */}
-          <div className="absolute inset-0 bg-black/40 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-black/60 pointer-events-none"></div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             {/* Title — top left */}
@@ -802,10 +802,10 @@ export default function App() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white drop-shadow-md">
                 Keling, biznesingiz haqida gaplashamiz
               </h2>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-200 text-sm leading-relaxed drop-shadow">
                 Ma'lumotlaringizni qoldiring — mutaxassisimiz siz bilan tez orada bog'lanadi.
               </p>
             </motion.div>
