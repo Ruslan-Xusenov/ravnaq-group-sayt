@@ -361,7 +361,7 @@ export default function App() {
                   <h2 className="text-[22px] font-bold text-[#1a2332] mb-8">Natijalarimiz</h2>
                   <div className="flex justify-between mb-8 px-2">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-ravnaq-gold"><CountUp end={10} duration={2} enableScrollSpy scrollSpyOnce />+</div>
+                      <div className="text-2xl font-bold text-ravnaq-gold"><CountUp end={20} duration={2} enableScrollSpy scrollSpyOnce />+</div>
                       <div className="text-xs text-gray-500 font-medium mt-1">loyiha</div>
                     </div>
                     <div className="w-px bg-gray-200"></div>
@@ -371,7 +371,7 @@ export default function App() {
                     </div>
                     <div className="w-px bg-gray-200"></div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-ravnaq-gold"><CountUp end={6} duration={2} enableScrollSpy scrollSpyOnce />+</div>
+                      <div className="text-2xl font-bold text-ravnaq-gold"><CountUp end={10} duration={2} enableScrollSpy scrollSpyOnce />+</div>
                       <div className="text-xs text-gray-500 font-medium mt-1">yil tajriba</div>
                     </div>
                   </div>
