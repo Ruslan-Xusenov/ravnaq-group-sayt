@@ -790,7 +790,7 @@ export default function App() {
         </section>
 
         {/* Contact Footer Section */}
-        <section id="contact" className="relative bg-ravnaq-black text-white overflow-hidden bg-cover bg-center" style={{ minHeight: '600px', backgroundImage: 'url("/pictures/contact-bg.webp")' }}>
+        <section id="contact" className="relative bg-ravnaq-black text-white overflow-hidden bg-cover bg-center bg-[url('/pictures/contact-bg-mobile.webp')] md:bg-[url('/pictures/contact-bg-desktop.webp')]" style={{ minHeight: '600px' }}>
           
           {/* Optional dark overlay to ensure text remains legible */}
           <div className="absolute inset-0 bg-black/60 pointer-events-none"></div>
