@@ -695,38 +695,54 @@ export default function App() {
           >
             <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-4">XIZMATLARIMIZ</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Obyektingizni sotishga ishlaydigan tizim<br/>
+              Obyektingizni sotishga ishlaydigan tizim.<br/>
               Har bir xizmat alohida emas - barchasi bitta maqsadga: ko'proq va tezroq sotuvga ishlaydi.
             </p>
           </motion.div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
-              className="flex flex-wrap justify-center gap-6"
-              variants={staggerContainer}
+              className="max-w-[1000px] mx-auto rounded-[40px] overflow-hidden flex flex-col md:flex-row shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+              variants={fadeUpVariant}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
-              {[
-                { title: "Quruvchi shaxsiy brendi", desc: "Quruvchini ekspert sifatida pozitsiyalab, uning shaxsiy brendi orqali loyihaga ishonch va sotuv yaratamiz.", icon: Share2 },
-                { title: "SMM & Media Production", desc: "Loyihani kontent orqali qadoqlaymiz: Reels, foto, video, dizayn va obyektning sotuvchi kontent yaratamiz.", icon: TrendingUp },
-                { title: "Lead Generation", desc: "Maqsadli reklama orqali potensial xaridorlar oqimini yaratamiz va har bir lidning qiymati hamda sifatini nazorat qilamiz.", icon: Palette },
-                { title: "CRM & Sotuvni raqamlashtirish", desc: "Lid kelgandan shartnoma tuzilgunga qadar bo'lgan jarayonni CRM, avtomatlashtirish va analitika orqali boshqaramiz.", icon: Users },
-                { title: "Zapusk", desc: "Yangi qurilish loyihasini bozorga chiqarishdan sotuvning faol bosqichigacha bo'lgan launch jarayonini ishlab chiqamiz va boshqaramiz.", icon: Rocket },
-                { title: "Sotuv bo'limi", desc: "ROP, sotuvchilar, skriptlar, KPI va nazorat tizimini yo'lga qo'yib, obyekt uchun tayyor sotuv bo'limini shakllantiramiz.", icon: Briefcase }
-              ].map((item, idx) => (
-                <motion.div variants={fadeUpVariant} key={idx} className="bg-white text-ravnaq-dark rounded-2xl p-6 sm:p-8 shadow-lg relative group overflow-hidden hover:-translate-y-2 transition-transform duration-300 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
-                   <div className="flex justify-between items-start mb-6">
-                     <div className="w-12 h-12 rounded-full bg-amber-50 flex items-center justify-center">
-                       <item.icon size={20} className="text-ravnaq-gold"/>
-                     </div>
-                     <ArrowUpRight size={20} className="text-gray-400 group-hover:text-ravnaq-gold transition-colors duration-300" />
-                   </div>
-                   <h3 className="font-bold mb-3 text-lg">{item.title}</h3>
-                   <p className="text-sm text-gray-500 leading-relaxed mb-4">{item.desc}</p>
-                </motion.div>
-              ))}
+              {/* Left Side */}
+              <div className="flex-1 bg-[#fffbf5] p-10 md:p-14 md:pr-8 text-[#1e293b] flex flex-col justify-center">
+                <ul className="space-y-8">
+                  <li className="flex items-start">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#c89838] mt-3.5 mr-5 flex-shrink-0"></span>
+                    <span className="text-2xl md:text-[26px] font-medium leading-tight">Marketing xizmati<br/>(SOSTAC modeli asosida)</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#c89838] mr-5 flex-shrink-0"></span>
+                    <span className="text-2xl md:text-[26px] font-medium leading-tight">Quruvchi shaxsiy brendi</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#c89838] mr-5 flex-shrink-0"></span>
+                    <span className="text-2xl md:text-[26px] font-medium leading-tight">SMM & Media Production</span>
+                  </li>
+                </ul>
+              </div>
+              
+              {/* Right Side */}
+              <div className="flex-1 bg-[#c89838] p-10 md:p-14 text-[#1e293b] flex flex-col justify-center">
+                <ul className="space-y-8">
+                  <li className="flex items-start">
+                    <span className="w-2.5 h-2.5 rounded-full bg-white mt-3.5 mr-5 flex-shrink-0"></span>
+                    <span className="text-2xl md:text-[26px] font-medium leading-tight">CRM & Sotuv<br/>bo'limini tizimlashtirish</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2.5 h-2.5 rounded-full bg-white mr-5 flex-shrink-0"></span>
+                    <span className="text-2xl md:text-[26px] font-medium leading-tight">Zapusk</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2.5 h-2.5 rounded-full bg-white mr-5 flex-shrink-0"></span>
+                    <span className="text-2xl md:text-[26px] font-medium leading-tight">Lead Generation</span>
+                  </li>
+                </ul>
+              </div>
             </motion.div>
 
             <div className="mt-12 text-center">
