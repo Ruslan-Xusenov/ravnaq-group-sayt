@@ -8,7 +8,7 @@ const projectsData = [
   { title: "ECO TOWER", subtitle: "Turar joy majmuasi", value1: "87,5 mlrd+", label1: "sotuv", value2: "250 ta", label2: "uy sotildi", logo: "/logos/logo2.webp", darkLogoBg: true },
   { title: "YAQINLAR", subtitle: "Turar joy majmuasi", value1: "70 mlrd+", label1: "sotuv", value2: "200 ta", label2: "uy sotildi", logo: "/logos/logo5.webp", darkLogoBg: true },
   { title: "BEKOBOD TURON", subtitle: "Turar joy majmuasi", value1: "17,5 mlrd+", label1: "sotuv", value2: "50 ta", label2: "uy sotildi", logo: "/logos/logo3.webp", darkLogoBg: true },
-  { title: "SHIRIN", subtitle: "Turar joy majmuasi", value1: "350 mlrd+", label1: "sotuv", value2: "1000 ta", label2: "uy sotildi", logo: "/logos/shirin.webp" },
+  { title: "SHIRIN", subtitle: "Turar joy majmuasi", value1: "350 mlrd+", label1: "sotuv", value2: "1000 ta", label2: "uy sotildi", logo: "/logos/shirin.webp", darkLogoBg: true },
   { title: "BARAKA", subtitle: "Turar joy majmuasi", value1: "52,5 mlrd+", label1: "sotuv", value2: "150 ta", label2: "uy sotildi", logo: "/logos/logo4.webp", darkLogoBg: true },
   { title: "TXT GROUP", subtitle: "Turar joy majmuasi", value1: "875 mlrd+", label1: "sotuv", value2: "2500 ta", label2: "uy sotildi", logo: "/logos/logo6.webp" },
   { title: "PAYSHANBA", subtitle: "Turar joy majmuasi", value1: "31,5 mlrd+", label1: "sotuv", value2: "90 ta", label2: "uy sotildi", logo: "/logos/payshanba.webp", darkLogoBg: true },
