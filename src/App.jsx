@@ -709,20 +709,22 @@ export default function App() {
               viewport={{ once: true, amount: 0.1 }}
             >
               {[
-                { title: "CRM & Sotuvni raqamlashtirish", desc: "Lid kelgandan shartnoma tuzilgunga qadar bo'lgan jarayonni CRM, avtomatlashtirish va analitika orqali boshqaramiz.", icon: Users },
                 { title: "Quruvchi shaxsiy brendi", desc: "Quruvchini ekspert sifatida pozitsiyalab, uning shaxsiy brendi orqali loyihaga ishonch va sotuv yaratamiz.", icon: Share2 },
                 { title: "SMM & Media Production", desc: "Loyihani kontent orqali qadoqlaymiz: Reels, foto, video, dizayn va obyektning sotuvchi kontent yaratamiz.", icon: TrendingUp },
                 { title: "Lead Generation", desc: "Maqsadli reklama orqali potensial xaridorlar oqimini yaratamiz va har bir lidning qiymati hamda sifatini nazorat qilamiz.", icon: Palette },
-                { title: "Zapusk", desc: "Yangi qurilish loyihasini bozorga chiqarishdan sotuvning faol bosqichigacha bo'lgan launch jarayonini ishlab chiqamiz va boshqaramiz.", icon: Rocket },
-                { title: "Sotuv bo'limi", desc: "ROP, sotuvchilar, skriptlar, KPI va nazorat tizimini yo'lga qo'yib, obyekt uchun tayyor sotuv bo'limini shakllantiramiz.", icon: Briefcase }
+                { title: "CRM & Sotuvni raqamlashtirish", desc: "Lid kelgandan shartnoma tuzilgunga qadar bo'lgan jarayonni CRM, avtomatlashtirish va analitika orqali boshqaramiz.", icon: Users },
+                { title: "Zapusk", desc: "Yangi qurilish loyihasini bozorga chiqarishdan sotuvning faol bosqichigacha bo'lgan launch jarayonini ishlab chiqamiz va boshqaramiz." },
+                { title: "Marketing xizmati (SOSTAC modeli asosida)", desc: "Bozor va raqobatchilarni tahlil qilib, maqsadli auditoriyani aniqlaymiz, marketing strategiyasini ishlab chiqamiz va SOSTAC asosida jarayonlarni tizimli boshqaramiz." }
               ].map((item, idx) => (
-                <motion.div variants={fadeUpVariant} key={idx} className="bg-white text-ravnaq-dark rounded-2xl p-6 sm:p-8 shadow-lg relative group overflow-hidden hover:-translate-y-2 transition-transform duration-300 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
-                   <div className="flex justify-between items-start mb-6">
-                     <div className="w-12 h-12 rounded-full bg-amber-50 flex items-center justify-center">
-                       <item.icon size={20} className="text-ravnaq-gold"/>
+                <motion.div variants={fadeUpVariant} key={idx} className="bg-white text-ravnaq-dark rounded-2xl p-6 sm:p-8 shadow-lg relative group overflow-hidden hover:-translate-y-2 transition-transform duration-300 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] flex flex-col justify-center">
+                   {item.icon && (
+                     <div className="flex justify-between items-start mb-6">
+                       <div className="w-12 h-12 rounded-full bg-amber-50 flex items-center justify-center">
+                         <item.icon size={20} className="text-ravnaq-gold"/>
+                       </div>
+                       <ArrowUpRight size={20} className="text-gray-400 group-hover:text-ravnaq-gold transition-colors duration-300" />
                      </div>
-                     <ArrowUpRight size={20} className="text-gray-400 group-hover:text-ravnaq-gold transition-colors duration-300" />
-                   </div>
+                   )}
                    <h3 className="font-bold mb-3 text-lg">{item.title}</h3>
                    <p className="text-sm text-gray-500 leading-relaxed mb-4">{item.desc}</p>
                 </motion.div>
