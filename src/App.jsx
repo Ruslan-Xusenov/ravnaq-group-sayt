@@ -709,10 +709,10 @@ export default function App() {
               viewport={{ once: true, amount: 0.1 }}
             >
               {[
+                { title: "CRM & Sotuvni raqamlashtirish", desc: "Lid kelgandan shartnoma tuzilgunga qadar bo'lgan jarayonni CRM, avtomatlashtirish va analitika orqali boshqaramiz.", icon: Users },
                 { title: "Quruvchi shaxsiy brendi", desc: "Quruvchini ekspert sifatida pozitsiyalab, uning shaxsiy brendi orqali loyihaga ishonch va sotuv yaratamiz.", icon: Share2 },
                 { title: "SMM & Media Production", desc: "Loyihani kontent orqali qadoqlaymiz: Reels, foto, video, dizayn va obyektning sotuvchi kontent yaratamiz.", icon: TrendingUp },
                 { title: "Lead Generation", desc: "Maqsadli reklama orqali potensial xaridorlar oqimini yaratamiz va har bir lidning qiymati hamda sifatini nazorat qilamiz.", icon: Palette },
-                { title: "CRM & Sotuvni raqamlashtirish", desc: "Lid kelgandan shartnoma tuzilgunga qadar bo'lgan jarayonni CRM, avtomatlashtirish va analitika orqali boshqaramiz.", icon: Users },
                 { title: "Zapusk", desc: "Yangi qurilish loyihasini bozorga chiqarishdan sotuvning faol bosqichigacha bo'lgan launch jarayonini ishlab chiqamiz va boshqaramiz.", icon: Rocket },
                 { title: "Sotuv bo'limi", desc: "ROP, sotuvchilar, skriptlar, KPI va nazorat tizimini yo'lga qo'yib, obyekt uchun tayyor sotuv bo'limini shakllantiramiz.", icon: Briefcase }
               ].map((item, idx) => (
