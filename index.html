@@ -398,11 +398,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap"></noscript>
+    <!-- CSS to visually hide SEO content without display: none (sr-only pattern) -->
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    </style>
   </head>
   <body>
     <!-- Static pre-rendered content for SEO crawlers (React hydrates over this) -->
     <div id="root">
-      <article itemscope itemtype="https://schema.org/Article">
+      <article class="sr-only" itemscope itemtype="https://schema.org/Article">
         <header>
           <h1 itemprop="headline">Ravnaq Group — SMM, Shaxsiy Brend, Lead Generation | O'zbekistonda qurilish agentligi</h1>
           <meta itemprop="author" content="Ravnaq Group" />
