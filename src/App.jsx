@@ -9,9 +9,6 @@ const projectsData = [
   { title: "YAQINLAR", subtitle: "Turar joy majmuasi", value1: "70 mlrd+", label1: "sotuv", value2: "200 ta", label2: "uy sotildi", logo: "/logos/logo5.webp", darkLogoBg: true },
   { title: "BEKOBOD TURON", subtitle: "Turar joy majmuasi", value1: "17,5 mlrd+", label1: "sotuv", value2: "50 ta", label2: "uy sotildi", logo: "/logos/logo3.webp", darkLogoBg: true },
   { title: "SHIRIN", subtitle: "Turar joy majmuasi", value1: "350 mlrd+", label1: "sotuv", value2: "1000 ta", label2: "uy sotildi", logo: "/logos/shirin.webp", darkLogoBg: true },
-  { title: "BARAKA", subtitle: "Turar joy majmuasi", value1: "52,5 mlrd+", label1: "sotuv", value2: "150 ta", label2: "uy sotildi", logo: "/logos/logo4.webp", darkLogoBg: true },
-  { title: "TXT GROUP", subtitle: "Turar joy majmuasi", value1: "875 mlrd+", label1: "sotuv", value2: "2500 ta", label2: "uy sotildi", logo: "/logos/txt-group.webp", darkLogoBg: true },
-  { title: "PAYSHANBA", subtitle: "Turar joy majmuasi", value1: "31,5 mlrd+", label1: "sotuv", value2: "90 ta", label2: "uy sotildi", logo: "/logos/payshanba.webp", darkLogoBg: true },
   { title: "SOHILBO'YI", subtitle: "Turar joy majmuasi", value1: "105 mlrd+", label1: "sotuv", value2: "300 ta", label2: "uy sotildi", logo: "/logos/logo1.webp", darkLogoBg: true }
 ];
 
@@ -376,7 +373,7 @@ export default function App() {
                     </div>
                   </div>
                   <div className="relative z-10">
-                    <div className="text-[34px] font-bold text-ravnaq-gold mb-0.5 leading-none">$<CountUp end={42} duration={2} enableScrollSpy scrollSpyOnce /> mln</div>
+                    <div className="text-[34px] font-bold text-ravnaq-gold mb-0.5 leading-none">$<CountUp end={56} duration={2} enableScrollSpy scrollSpyOnce /> mln</div>
                     <div className="text-[11px] text-gray-500 mb-12">umumiy sotuv summasi</div>
                   </div>
                   {/* Smoother Chart graphic */}
@@ -941,7 +938,7 @@ export default function App() {
                         <Settings size={16} />
                       </div>
                       <select aria-label="Sizga qanday xizmat kerak" name="service" value={form.service} onChange={handleChange} className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-gray-500 bg-white text-sm font-medium appearance-none">
-                        <option value="">Qaysi xizmat qiziqtirdi?</option>
+                        <option value="">Qanday muammoyingiz bor?</option>
                         <option>SMM</option>
                         <option>Lead Generation</option>
                         <option>Sotuv bo'limi</option>
