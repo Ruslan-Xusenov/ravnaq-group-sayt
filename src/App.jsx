@@ -989,7 +989,7 @@ export default function App() {
             </motion.div>
           </div>
           {/* Footer */}
-          <footer className="w-full mt-24 border-t border-white/10 pt-8 pb-4 relative z-10">
+          <footer className="w-full mt-24 pt-8 pb-4 relative z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="flex items-center gap-4">
                 <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group" className="h-10" />
