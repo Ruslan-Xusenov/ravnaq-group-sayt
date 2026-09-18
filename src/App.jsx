@@ -1019,13 +1019,18 @@ export default function App() {
                 <p className="text-gray-500 text-xs leading-relaxed max-w-4xl">
                   <strong className="text-gray-400">Ravnaq Group</strong> — O'zbekistondagi yetakchi qurilish agentligi. <strong className="text-gray-400">SMM xizmati</strong>, <strong className="text-gray-400">shaxsiy brend</strong> yaratish va <strong className="text-gray-400">lead generation</strong> bo'yicha professional agentlik. Toshkent shahrida joylashgan Ravnaq Group qurilish kompaniyalari uchun to'liq marketing va sotuv xizmatlari ko'rsatadi: performance marketing, SMM agentligi, lead olish, shaxsiy brending, CRM, sotuv bo'limi tashkil etish va yangi qurilish loyihalarini bozorga chiqarish (zapusk). 10+ yillik tajriba, 20+ qurilish loyihasi, 35+ mutaxassis jamoasi va $56 million+ umumiy sotuv natijasi. SMM orqali Instagram va Telegram'da qurilish loyihalarini targ'ib qilamiz. Shaxsiy brend orqali quruvchining ishonchli imijini yaratamiz. Lead generation orqali sifatli mijozlar oqimini ta'minlaymiz.
                 </p>
+                <address className="text-gray-500 text-xs leading-relaxed max-w-4xl mt-3 not-italic">
+                  <span className="font-semibold text-gray-400">Manzil:</span> Toshkent shahri, O'zbekiston | 
+                  <span className="font-semibold text-gray-400 ml-2">Telefon:</span> <a href="tel:+998772773765" className="hover:text-ravnaq-gold">+998 77 277 37 65</a> |
+                  <span className="font-semibold text-gray-400 ml-2">Email:</span> <a href="mailto:info@ravnaqgroup.uz" className="hover:text-ravnaq-gold">info@ravnaqgroup.uz</a>
+                </address>
                 <p className="text-gray-600 text-[10px] leading-relaxed mt-2 max-w-4xl">
                   Равнак Групп (RavnaqGroup) — SMM агентство, личный бренд, лидогенерация. Ведущее строительное маркетинговое агентство в Узбекистане. SMM для строительства, персональный брендинг, лид генерация, CRM, запуск проектов.
                 </p>
               </div>
               <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div className="flex items-center gap-4">
-                  <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group — qurilish agentligi logotipi" className="h-10" />
+                  <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group — qurilish agentligi logotipi" width="160" height="40" className="h-10 w-auto" />
                   <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Ravnaq Group — O'zbekistonda qurilish agentligi. Barcha huquqlar himoyalangan.</p>
                 </div>
                 <div className="flex items-center gap-6">
