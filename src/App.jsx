@@ -988,21 +988,20 @@ export default function App() {
               </div>
             </motion.div>
           </div>
+          {/* Footer */}
+          <footer className="w-full mt-24 border-t border-white/10 pt-8 pb-4 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+              <div className="flex items-center gap-4">
+                <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group" className="h-10" />
+                <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Ravnaq Group. Barcha huquqlar himoyalangan.</p>
+              </div>
+              <div className="flex items-center gap-6">
+                <button onClick={() => setIsPrivacyOpen(true)} className="text-gray-400 hover:text-white text-sm transition">Maxfiylik siyosati</button>
+              </div>
+            </div>
+          </footer>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-[#0a0a0a] border-t border-white/10 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-4">
-            <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group" className="h-10" />
-            <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Ravnaq Group. Barcha huquqlar himoyalangan.</p>
-          </div>
-          <div className="flex items-center gap-6">
-            <button onClick={() => setIsPrivacyOpen(true)} className="text-gray-400 hover:text-white text-sm transition">Maxfiylik siyosati</button>
-          </div>
-        </div>
-      </footer>
 
       {/* Privacy Policy Modal */}
       {isPrivacyOpen && (
