@@ -86,6 +86,7 @@ const fadeUpVariants = {
 
 export default function App() {
   const [openFaq, setOpenFaq] = useState(0);
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", company: "", position: "", service: "", source: "" });
   const [sending, setSending] = useState(false);
@@ -237,6 +238,7 @@ export default function App() {
               <a href="#" className="hover:text-ravnaq-dark transition">Asosiy</a>
               <a href="#biz-kimmiz" className="hover:text-ravnaq-dark transition">Kompaniya</a>
               <a href="#" className="hover:text-ravnaq-dark transition">Loyihalar</a>
+              <a href="#faq" className="hover:text-ravnaq-dark transition">FAQ</a>
               <a href="#contact" className="hover:text-ravnaq-dark transition">Bog'lanish</a>
             </nav>
 
@@ -270,6 +272,8 @@ export default function App() {
               <a href="#biz-kimmiz" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-semibold text-ravnaq-dark hover:text-ravnaq-gold transition px-2">Kompaniya</a>
               <div className="h-px w-full bg-gray-100"></div>
               <a href="#" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-semibold text-ravnaq-dark hover:text-ravnaq-gold transition px-2">Loyihalar</a>
+              <div className="h-px w-full bg-gray-100"></div>
+              <a href="#faq" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-semibold text-ravnaq-dark hover:text-ravnaq-gold transition px-2">FAQ</a>
               <div className="pt-4">
                 <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full py-4 text-center bg-ravnaq-dark text-white text-base font-semibold rounded-2xl shadow-lg hover:bg-gray-800 transition">
                   Bog'lanish
@@ -737,7 +741,7 @@ export default function App() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-24 bg-white">
+        <section id="faq" className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               className="grid lg:grid-cols-12 gap-12"
@@ -986,6 +990,47 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      {/* Footer */}
+      <footer className="bg-[#0a0a0a] border-t border-white/10 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-4">
+            <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group" className="h-10" />
+            <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Ravnaq Group. Barcha huquqlar himoyalangan.</p>
+          </div>
+          <div className="flex items-center gap-6">
+            <button onClick={() => setIsPrivacyOpen(true)} className="text-gray-400 hover:text-white text-sm transition">Maxfiylik siyosati</button>
+          </div>
+        </div>
+      </footer>
+
+      {/* Privacy Policy Modal */}
+      {isPrivacyOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setIsPrivacyOpen(false)} />
+          <div className="relative bg-white w-full max-w-3xl max-h-[80vh] rounded-2xl p-6 md:p-10 overflow-y-auto z-10 shadow-2xl">
+            <button onClick={() => setIsPrivacyOpen(false)} className="absolute top-6 right-6 text-gray-500 hover:text-black transition">
+              <X size={24} />
+            </button>
+            <h2 className="text-2xl font-bold text-ravnaq-dark mb-6">Maxfiylik siyosati</h2>
+            <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
+              <p>Sizning shaxsiy ma'lumotlaringiz xavfsizligi biz uchun muhim. Ushbu maxfiylik siyosati biz qanday ma'lumotlarni yig'ishimiz, ulardan qanday foydalanishimiz va himoya qilishimizni tushuntiradi.</p>
+              <h3 className="font-semibold text-gray-800 text-base mt-6">1. Ma'lumotlarni yig'ish</h3>
+              <p>Biz saytimiz orqali so'rov qoldirganingizda ismingiz, telefon raqamingiz va qiziqayotgan xizmat turini yig'amiz.</p>
+              <h3 className="font-semibold text-gray-800 text-base mt-6">2. Ma'lumotlardan foydalanish</h3>
+              <p>Yig'ilgan ma'lumotlar faqatgina siz bilan bog'lanish va sizga sifatli xizmat ko'rsatish maqsadida foydalaniladi. Biz shaxsiy ma'lumotlaringizni uchinchi shaxslarga sotmaymiz yoki ularga uzatmaymiz.</p>
+              <h3 className="font-semibold text-gray-800 text-base mt-6">3. Ma'lumotlarni himoya qilish</h3>
+              <p>Biz ma'lumotlaringizni xavfsiz saqlash va ruxsatsiz kirishdan himoya qilish uchun barcha zarur xavfsizlik choralarini ko'ramiz.</p>
+              <h3 className="font-semibold text-gray-800 text-base mt-6">4. O'zgarishlar</h3>
+              <p>Ushbu maxfiylik siyosati vaqti-vaqti bilan yangilanishi mumkin. Har qanday o'zgarishlar ushbu sahifada e'lon qilinadi.</p>
+            </div>
+            <div className="mt-8 text-center">
+              <button onClick={() => setIsPrivacyOpen(false)} className="bg-ravnaq-gold text-white px-8 py-3 rounded-[12px] font-semibold hover:bg-[#c5913d] transition">Tushunarli</button>
+            </div>
+          </div>
+        </div>
+      )}
+
       </div>
     </>
   );
