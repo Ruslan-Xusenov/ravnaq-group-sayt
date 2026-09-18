@@ -1,4 +1,58 @@
+# Ravnaq Group - https://ravnaq.uz
+# SMM, Shaxsiy Brend, Lead Generation | Qurilish agentligi
+
 User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /assets/*.js$
+Allow: /assets/*.css$
+Allow: /pictures/
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /pictures/
+Allow: /logos/
+
+# Google Video
+User-agent: Googlebot-Video
+Allow: /
+Allow: /*.mp4$
+
+# Yandex (muhim — O'zbekiston uchun)
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Yandex Images
+User-agent: YandexImages
+Allow: /pictures/
+Allow: /logos/
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Social Media Crawlers
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: LinkedInBot
 Allow: /
 
 Sitemap: https://ravnaq.uz/sitemap.xml
+
+# Host directive for Yandex
+Host: https://ravnaq.uz

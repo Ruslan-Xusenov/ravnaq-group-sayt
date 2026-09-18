@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://ravnaq.uz/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ravnaq.uz/pictures/hero.webp</image:loc>
+      <image:title>Ravnaq Group — SMM, shaxsiy brend, lead generation | Qurilish agentligi</image:title>
+      <image:caption>Ravnaq Group qurilish agentligi — O'zbekistonda SMM xizmati, shaxsiy brend yaratish va lead generation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ravnaq.uz/pictures/ravnaq-group-logo.webp</image:loc>
+      <image:title>Ravnaq Group logotipi</image:title>
+      <image:caption>Ravnaq Group — O'zbekistondagi qurilish agentligi logotipi</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://ravnaq.uz/pictures/hero.webp</video:thumbnail_loc>
+      <video:title>Numan Group — Ravnaq Group SMM va lead generation natijalari</video:title>
+      <video:description>Numan Group qurilish loyihasi uchun SMM, shaxsiy brend va lead generation orqali 140 mlrd+ sotuv natijasi</video:description>
+      <video:content_loc>https://ravnaq.uz/numan-group-carusel.mp4</video:content_loc>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://ravnaq.uz/#biz-kimmiz</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ravnaq.uz/#xizmatlar</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ravnaq.uz/#faq</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ravnaq.uz/#contact</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

@@ -1,0 +1,19 @@
+{
+  "name": "Ravnaq Group — SMM, Shaxsiy Brend, Lead Generation | Qurilish agentligi O'zbekiston",
+  "short_name": "Ravnaq Group",
+  "description": "Ravnaq Group — O'zbekistondagi qurilish agentligi. SMM xizmati, shaxsiy brend yaratish, lead generation. Qurilish kompaniyalari uchun marketing va sotuv.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A1F2C",
+  "theme_color": "#1A1F2C",
+  "lang": "uz",
+  "categories": ["business", "marketing", "construction"],
+  "icons": [
+    {
+      "src": "/pictures/ravnaq-group-logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}

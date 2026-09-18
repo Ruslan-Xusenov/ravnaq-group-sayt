@@ -230,7 +230,7 @@ export default function App() {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
               <a href="#">
-                <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group" width="160" height="72" className="h-16 sm:h-[72px] w-auto object-contain transform scale-110 origin-left" />
+              <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group logotipi — O'zbekistonda qurilish agentligi" width="160" height="72" className="h-16 sm:h-[72px] w-auto object-contain transform scale-110 origin-left" />
               </a>
             </div>
 
@@ -289,12 +289,12 @@ export default function App() {
         {/* Full-screen wrapper for Hero and Partners */}
         <div className="min-h-screen flex flex-col">
           {/* Hero Section */}
-          <section className="relative flex-1 flex flex-col justify-center pt-24 pb-16 lg:pt-[72px] overflow-hidden bg-ravnaq-dark">
+          <section aria-label="Ravnaq Group — qurilish agentligi bosh sahifasi" className="relative flex-1 flex flex-col justify-center pt-24 pb-16 lg:pt-[72px] overflow-hidden bg-ravnaq-dark">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <img 
               src="/pictures/hero.webp" 
-              alt="Construction Worker" 
+              alt="Ravnaq Group — O'zbekistonda qurilish marketing agentligi" 
               width="1920" height="1080" 
               fetchpriority="high" 
               className="w-full h-full object-cover object-[center_top]"
@@ -317,7 +317,7 @@ export default function App() {
                   whileInView="visible"
                   viewport={{ once: true }}
                 >
-                  Qurilish biznesingiz uchun <br className="hidden sm:block"/>
+                  Ravnaq Group — qurilish biznesingiz uchun <br className="hidden sm:block"/>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-ravnaq-gold to-yellow-400">
                     raqamlashtirilgan sotuv bo'limi<br className="hidden sm:block"/> va marketing xizmati
                   </span>
@@ -331,8 +331,8 @@ export default function App() {
                   whileInView="visible"
                   viewport={{ once: true }}
                 >
-                  Strategiya, brending, reklama, lidlar oqimi va tahlilgacha va 
-                  sotuvning barcha jarayonlarini raqamlashtirilgan yagona ekotizimda boshqaramiz.
+                  SMM, shaxsiy brend, lead generation, strategiya, brending, reklama, lidlar oqimi va tahlilgacha — 
+                  sotuvning barcha jarayonlarini raqamlashtirilgan yagona ekotizimda boshqaramiz. O'zbekistondagi qurilish agentligi sifatida loyihangizni bozorda raqobatbardosh qilamiz.
                 </motion.p>
                 
                 <motion.div 
@@ -404,7 +404,7 @@ export default function App() {
           >
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
             <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
-              <h2 className="text-xl font-bold text-[#1a2332] text-center md:text-left md:w-1/4 leading-snug shrink-0">Bizning<br className="hidden md:block"/>loyihalarimiz</h2>
+              <h2 className="text-xl font-bold text-[#1a2332] text-center md:text-left md:w-1/4 leading-snug shrink-0">Ravnaq Group<br className="hidden md:block"/>qurilish loyihalari</h2>
               <div className="flex-1 w-full relative overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
                 <Marquee gradient={false} speed={40} pauseOnHover={true} pauseOnClick={true}>
                   <div className="flex gap-6 pr-6 py-2">
@@ -428,7 +428,7 @@ export default function App() {
       </div>
 
         {/* About Section */}
-        <section className="py-24 bg-white overflow-hidden" id="biz-kimmiz">
+        <section className="py-24 bg-white overflow-hidden" id="biz-kimmiz" aria-label="Ravnaq Group qurilish agentligi haqida">
           <motion.div 
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16"
             variants={fadeUpVariant}
@@ -436,7 +436,7 @@ export default function App() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <h2 className="text-4xl font-bold text-ravnaq-dark">Biz kimmiz ?</h2>
+            <h2 className="text-4xl font-bold text-ravnaq-dark">Ravnaq Group — Biz kimmiz?</h2>
           </motion.div>
           <motion.div 
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -448,10 +448,10 @@ export default function App() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
                 <motion.p variants={fadeRightVariant} className="text-lg text-ravnaq-gray leading-relaxed font-normal">
-                  <span className="text-ravnaq-dark font-bold">RAVNAQ GROUP</span> — qurilish kompaniyalari uchun marketing va sotuv tizimini boshqaradigan jamoa. Biz alohida marketing yoki sotuv xizmatini emas, loyihaning marketingidan tortib real sotuvigacha bo'lgan jarayonni to'liq o'z zimmamizga olamiz. Quruvchi esa qurilish sifati va muddatiga e'tibor qaratadi.
+                  <span className="text-ravnaq-dark font-bold">RAVNAQ GROUP</span> — O'zbekistondagi yetakchi qurilish agentligi bo'lib, qurilish kompaniyalari uchun marketing va sotuv tizimini boshqaradigan jamoa. Biz alohida marketing yoki sotuv xizmatini emas, loyihaning marketingidan tortib real sotuvigacha bo'lgan jarayonni to'liq o'z zimmamizga olamiz. Quruvchi esa qurilish sifati va muddatiga e'tibor qaratadi.
                 </motion.p>
                 <motion.p variants={fadeRightVariant} className="text-lg text-ravnaq-gray leading-relaxed">
-                  Bizning yondashuvimiz — marketing va sotuvni yagona raqamlashtirilgan tizimda boshqarish. Marketing orqali loyihaga talab va sifatli xaridorlar oqimini yaratamiz, RAVNAQ GROUP Akademiyasida tayyorlangan tajribali sotuvchilarni loyihaga biriktiramiz va kelgan murojaatlarni tizimli ravishda real sotuvga aylantiramiz.
+                  Bizning yondashuvimiz — SMM, shaxsiy brend yaratish, lead generation va sotuvni yagona raqamlashtirilgan tizimda boshqarish. Marketing orqali loyihaga talab va sifatli leadlar oqimini yaratamiz, RAVNAQ GROUP Akademiyasida tayyorlangan tajribali sotuvchilarni loyihaga biriktiramiz va kelgan murojaatlarni tizimli ravishda real sotuvga aylantiramiz.
                 </motion.p>
                 <motion.p variants={fadeRightVariant} className="text-lg text-ravnaq-gray leading-relaxed">
                   Har bir loyihaning hajmi, joylashuvi, qurilish bosqichi, auditoriyasi va mavjud sotuv holatini hisobga olib, individual yondashuvni shakllantiramiz. Bizning asosiy maqsadimiz — quruvchining marketing va sotuv bilan bog'liq bosh og'rig'ini o'z zimmamizga olib, xonadonlarning tezroq va samaraliroq sotilishini ta'minlash.
@@ -465,7 +465,7 @@ export default function App() {
               <motion.div variants={fadeLeftVariant} className="relative rounded-2xl overflow-hidden shadow-2xl h-[300px] sm:h-[400px] lg:h-[500px]">
                 <img loading="lazy" 
                   src="/pictures/rt4y5ui.webp" 
-                  alt="Office Meeting" 
+                  alt="Ravnaq Group jamoasi — qurilish marketing agentligi O'zbekiston" 
                   width="600" height="500"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -475,7 +475,7 @@ export default function App() {
         </section>
 
         {/* Problems Section */}
-        <section className="py-24 bg-ravnaq-light-bg overflow-hidden">
+        <section className="py-24 bg-ravnaq-light-bg overflow-hidden" aria-label="Qurilish sohasidagi muammolar va Ravnaq Group yechimlari">
           <motion.div 
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16"
             variants={fadeUpVariant}
@@ -484,7 +484,7 @@ export default function App() {
             viewport={{ once: true, amount: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark max-w-3xl mx-auto">
-              Qurilishda sotuvni sekinlashtiradigan<br/>6 ta asosiy muammo
+               Qurilishda sotuvni sekinlashtiradigan<br/>6 ta asosiy muammo — Ravnaq Group yechimlari
             </h2>
           </motion.div>
 
@@ -573,7 +573,7 @@ export default function App() {
 
 
         {/* Case Studies */}
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section className="py-24 bg-white relative overflow-hidden" aria-label="Ravnaq Group qurilish agentligi loyihalari va natijalari">
           {/* Subtle Grid Background */}
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#e5e7eb 1px, transparent 1px)', backgroundSize: '40px 40px', opacity: 0.5 }}></div>
           
@@ -585,7 +585,7 @@ export default function App() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark text-center sm:text-left">Biz qurgan tizim – real<br className="hidden sm:block"/>natijalarda</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark text-center sm:text-left">Ravnaq Group qurgan tizim — real<br className="hidden sm:block"/>natijalarda</h2>
               <div className="flex gap-2 justify-center sm:justify-start">
                 <button aria-label="Oldingi slayd" onClick={prevProjectSlide} className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-ravnaq-dark hover:text-white transition hover:border-ravnaq-dark">
                   <ChevronLeft size={20} />
@@ -687,7 +687,7 @@ export default function App() {
         </section>
 
         {/* Services Section */}
-        <section className="py-24 bg-ravnaq-black text-white">
+        <section id="xizmatlar" className="py-24 bg-ravnaq-black text-white" aria-label="Ravnaq Group qurilish agentligi xizmatlari">
           <motion.div 
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16"
             variants={fadeUpVariant}
@@ -695,9 +695,9 @@ export default function App() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-4">XIZMATLARIMIZ</h2>
+            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest mb-4">RAVNAQ GROUP XIZMATLARI</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Obyektingizni sotishga ishlaydigan tizim<br/>
+              O'zbekistondagi yetakchi qurilish agentligi sifatida obyektingizni sotishga ishlaydigan tizim yaratamiz.<br/>
               Har bir xizmat alohida emas - barchasi bitta maqsadga: ko'proq va tezroq sotuvga ishlaydi.
             </p>
           </motion.div>
@@ -752,11 +752,11 @@ export default function App() {
               viewport={{ once: true, amount: 0.2 }}
             >
               <motion.div variants={fadeRightVariant} className="lg:col-span-5 text-center lg:text-left">
-                <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark mb-10 lg:mb-12">Eng ko'p beriladigan<br className="hidden lg:block"/>savollar</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-ravnaq-dark mb-10 lg:mb-12">Ravnaq Group qurilish agentligi haqida<br className="hidden lg:block"/>eng ko'p beriladigan savollar</h2>
                 
                 <div className="space-y-6">
-                  <img width="400" height="200" loading="lazy" src="/pictures/a056922e920aa4647cba3d490de74b43.webp" alt="Team meeting" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
-                  <img width="400" height="200" loading="lazy" src="/pictures/1463db54173250c425b18faccc17a2dc.webp" alt="Person wondering" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
+                  <img width="400" height="200" loading="lazy" src="/pictures/a056922e920aa4647cba3d490de74b43.webp" alt="Ravnaq Group qurilish agentligi jamoasi yig'ilishi" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
+                  <img width="400" height="200" loading="lazy" src="/pictures/1463db54173250c425b18faccc17a2dc.webp" alt="Qurilish agentligi bilan hamkorlik qilish haqida o'ylayotgan kishi" className="rounded-3xl w-full h-48 object-cover shadow-lg" />
                 </div>
               </motion.div>
               <div className="lg:col-span-7 space-y-4">
@@ -1000,13 +1000,24 @@ export default function App() {
           </div>
           {/* Footer */}
           <footer className="w-full mt-24 pt-8 pb-4 relative z-10">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-              <div className="flex items-center gap-4">
-                <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group" className="h-10" />
-                <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Ravnaq Group. Barcha huquqlar himoyalangan.</p>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              {/* SEO-rich footer description */}
+              <div className="border-t border-white/10 pt-8 mb-8">
+                <p className="text-gray-500 text-xs leading-relaxed max-w-4xl">
+                  <strong className="text-gray-400">Ravnaq Group</strong> — O'zbekistondagi yetakchi qurilish agentligi. <strong className="text-gray-400">SMM xizmati</strong>, <strong className="text-gray-400">shaxsiy brend</strong> yaratish va <strong className="text-gray-400">lead generation</strong> bo'yicha professional agentlik. Toshkent shahrida joylashgan Ravnaq Group qurilish kompaniyalari uchun to'liq marketing va sotuv xizmatlari ko'rsatadi: performance marketing, SMM agentligi, lead olish, shaxsiy brending, CRM, sotuv bo'limi tashkil etish va yangi qurilish loyihalarini bozorga chiqarish (zapusk). 10+ yillik tajriba, 20+ qurilish loyihasi, 35+ mutaxassis jamoasi va $56 million+ umumiy sotuv natijasi. SMM orqali Instagram va Telegram'da qurilish loyihalarini targ'ib qilamiz. Shaxsiy brend orqali quruvchining ishonchli imijini yaratamiz. Lead generation orqali sifatli mijozlar oqimini ta'minlaymiz.
+                </p>
+                <p className="text-gray-600 text-[10px] leading-relaxed mt-2 max-w-4xl">
+                  Равнак Групп (RavnaqGroup) — SMM агентство, личный бренд, лидогенерация. Ведущее строительное маркетинговое агентство в Узбекистане. SMM для строительства, персональный брендинг, лид генерация, CRM, запуск проектов.
+                </p>
               </div>
-              <div className="flex items-center gap-6">
-                <button onClick={() => setIsPrivacyOpen(true)} className="text-gray-400 hover:text-white text-sm transition">Maxfiylik siyosati</button>
+              <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="flex items-center gap-4">
+                  <img src="/pictures/ravnaq-group-logo.webp" alt="Ravnaq Group — qurilish agentligi logotipi" className="h-10" />
+                  <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Ravnaq Group — O'zbekistonda qurilish agentligi. Barcha huquqlar himoyalangan.</p>
+                </div>
+                <div className="flex items-center gap-6">
+                  <button onClick={() => setIsPrivacyOpen(true)} className="text-gray-400 hover:text-white text-sm transition">Maxfiylik siyosati</button>
+                </div>
               </div>
             </div>
           </footer>
