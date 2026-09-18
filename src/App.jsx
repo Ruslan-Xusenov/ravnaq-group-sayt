@@ -2,6 +2,35 @@ import React, { useState, useEffect, Suspense, lazy } from "react";
 import { Phone, ArrowRight, ChevronDown, CheckCircle2, ChevronLeft, ChevronRight, Menu, X, Triangle, Building, Building2, Landmark, Diamond, User, Briefcase, Settings, Link as LinkIcon, Send, Share2, TrendingUp, Palette, Users, Rocket, ArrowUpRight, Target } from "lucide-react";
 const PremiumMap = lazy(() => import("./PremiumMap"));
 
+const LazyVideo = ({ src, source, className, ...props }) => {
+  const [inView, setInView] = useState(false);
+  const ref = React.useRef(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setInView(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: '200px' });
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <div ref={ref} className={className}>
+      {inView ? (
+        <video 
+          className="w-full h-full object-cover" 
+          autoPlay muted loop playsInline {...props}
+          {...(src ? { src } : {})}
+        >
+          {source && <source src={source.src} type={source.type} />}
+        </video>
+      ) : null}
+    </div>
+  );
+};
+
+
 const projectsData = [
   { title: "NUMAN GROUP", subtitle: "Asosiy kompaniya", value1: "140 mlrd+", label1: "shartnomalar", value2: "400+ ta", label2: "xonadon sotildi", video: "/numan-group-carusel.mp4", logo: "/logos/numan.webp" },
   { title: "OLTINSOY CITY", subtitle: "Turar joy majmuasi", value1: "35 mlrd+", label1: "sotuv", value2: "100 ta", label2: "uy sotildi", video: "/oltinsoy-carusel.mp4", logo: "/logos/oltinsoy.webp" },
@@ -626,15 +655,9 @@ export default function App() {
                         <div className="row-span-2 flex justify-end items-stretch h-full w-full relative">
                            {project.video ? (
                              <div className="relative w-full h-48 sm:h-64 md:h-72 ml-4 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-shadow duration-500 border border-white/50">
-                               <video 
+                             <LazyVideo 
                                  src={project.video} 
                                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                 autoPlay 
-                                 muted 
-                                 loop 
-                                 playsInline
-                                 preload="none"
-                                 width="400" height="288"
                                />
                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                              </div>
@@ -795,26 +818,16 @@ export default function App() {
         <section id="contact" className="relative bg-ravnaq-black text-white overflow-hidden bg-cover bg-center bg-[url('/pictures/contact-bg-mobile.webp')] md:bg-[url('/pictures/contact-bg-desktop.webp')]" style={{ minHeight: '600px' }}>
           
           {/* Mobile Video Background */}
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
+          <LazyVideo 
             className="absolute inset-0 w-full h-full object-cover md:hidden blur-[2px]"
-          >
-            <source src="/videos/contact-bg-mobile.mp4" type="video/mp4" />
-          </video>
+            source={{ src: "/videos/contact-bg-mobile.mp4", type: "video/mp4" }}
+          />
 
           {/* Desktop Video Background */}
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
+          <LazyVideo 
             className="absolute inset-0 w-full h-full object-cover hidden md:block blur-[2px]"
-          >
-            <source src="/videos/contact-bg-desktop.mp4" type="video/mp4" />
-          </video>
+            source={{ src: "/videos/contact-bg-desktop.mp4", type: "video/mp4" }}
+          />
 
           {/* Optional dark overlay to ensure text remains legible */}
           <div className="absolute inset-0 bg-black/60 pointer-events-none"></div>
