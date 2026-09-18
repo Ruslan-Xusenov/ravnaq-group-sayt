@@ -92,6 +92,7 @@ export default function App() {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
+  const [agreed, setAgreed] = useState(false);
 
   const [currentProjectSlide, setCurrentProjectSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
@@ -974,14 +975,23 @@ export default function App() {
                     <div className="mt-auto pt-2">
                       <button 
                         type="submit" 
-                        disabled={sending}
-                        className="w-full py-4 bg-ravnaq-gold text-white font-semibold rounded-[12px] flex items-center justify-center gap-2 hover:bg-[#c5913d] transition disabled:opacity-70 text-sm"
+                        disabled={sending || !agreed}
+                        className="w-full py-4 bg-ravnaq-gold text-white font-semibold rounded-[12px] flex items-center justify-center gap-2 hover:bg-[#c5913d] transition disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                       >
                         {sending ? 'Yuborilmoqda...' : 'Ariza qoldirish'} <ArrowRight size={18} />
                       </button>
-                      <p className="text-[10px] text-gray-500 text-center mt-4">
-                        Tugmani bosish orqali shaxsiy ma'lumotlaringizni qayta ishlashga rozilik bildirasiz.
-                      </p>
+                      <label className="flex items-start gap-2 mt-4 cursor-pointer">
+                        <input 
+                          type="checkbox" 
+                          required
+                          checked={agreed}
+                          onChange={(e) => setAgreed(e.target.checked)}
+                          className="mt-0.5 accent-ravnaq-gold w-4 h-4 rounded" 
+                        />
+                        <span className="text-[10px] text-gray-500 text-left leading-tight">
+                          Men <button type="button" onClick={() => setIsPrivacyOpen(true)} className="text-ravnaq-gold hover:underline">Maxfiylik siyosati</button> va <a href="#faq" className="text-ravnaq-gold hover:underline">FAQ</a> (shartlarga) rozilik bildiraman.
+                        </span>
+                      </label>
                     </div>
                   </form>
                 )}
