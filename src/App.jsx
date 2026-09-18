@@ -726,7 +726,7 @@ export default function App() {
                        <ArrowUpRight size={20} className="text-gray-400 group-hover:text-ravnaq-gold transition-colors duration-300" />
                      </div>
                    )}
-                   <h3 className="font-bold mb-3 text-lg">{item.title}</h3>
+                   <h3 className="font-bold mb-3 text-lg min-h-[84px] flex items-start">{item.title}</h3>
                    <p className="text-sm text-gray-500 leading-relaxed mb-4">{item.desc}</p>
                 </motion.div>
               ))}
