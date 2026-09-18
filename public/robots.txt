@@ -1,4 +1,4 @@
-# Ravnaq Group - https://ravnaq.uz
+# Ravnaq Group - https://www.ravnaqgroup.uz
 # SMM, Shaxsiy Brend, Lead Generation | Qurilish agentligi
 
 User-agent: *
@@ -52,7 +52,7 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-Sitemap: https://ravnaq.uz/sitemap.xml
+Sitemap: https://www.ravnaqgroup.uz/sitemap.xml
 
 # Host directive for Yandex
-Host: https://ravnaq.uz
+Host: https://www.ravnaqgroup.uz
