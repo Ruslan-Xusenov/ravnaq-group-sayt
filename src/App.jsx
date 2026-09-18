@@ -800,7 +800,7 @@ export default function App() {
             loop 
             muted 
             playsInline 
-            className="absolute inset-0 w-full h-full object-cover md:hidden"
+            className="absolute inset-0 w-full h-full object-cover md:hidden blur-[2px]"
           >
             <source src="/videos/contact-bg-mobile.mp4" type="video/mp4" />
           </video>
@@ -811,7 +811,7 @@ export default function App() {
             loop 
             muted 
             playsInline 
-            className="absolute inset-0 w-full h-full object-cover hidden md:block"
+            className="absolute inset-0 w-full h-full object-cover hidden md:block blur-[2px]"
           >
             <source src="/videos/contact-bg-desktop.mp4" type="video/mp4" />
           </video>
