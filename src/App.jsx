@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Suspense, lazy } from "react";
 import { Phone, ArrowRight, ChevronDown, CheckCircle2, ChevronLeft, ChevronRight, Menu, X, Triangle, Building, Building2, Landmark, Diamond, User, Briefcase, Settings, Link as LinkIcon, Send, Share2, TrendingUp, Palette, Users, Rocket, ArrowUpRight, Target } from "lucide-react";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 const PremiumMap = lazy(() => import("./PremiumMap"));
 
 const LazyVideo = ({ src, source, className, ...props }) => {
@@ -1060,6 +1061,7 @@ export default function App() {
       )}
 
       </div>
+      <SpeedInsights />
     </>
   );
 }
