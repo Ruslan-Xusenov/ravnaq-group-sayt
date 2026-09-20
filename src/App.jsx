@@ -955,17 +955,7 @@ export default function App() {
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
                         <Settings size={16} />
                       </div>
-                      <select aria-label="Sizga qanday xizmat kerak" name="service" value={form.service} onChange={handleChange} className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-gray-500 bg-white text-sm font-medium appearance-none">
-                        <option value="">Qanday muammoyingiz bor?</option>
-                        <option>SMM</option>
-                        <option>Lead Generation</option>
-                        <option>Sotuv bo'limi</option>
-                        <option>Zapusk</option>
-                        <option>CRM va raqamlashtirish</option>
-                      </select>
-                      <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-500">
-                        <ChevronDown size={16} />
-                      </div>
+                      <input aria-label="Qanday muammoyingiz bor" name="service" value={form.service} onChange={handleChange} type="text" placeholder="Qanday muammoyingiz bor?" className="w-full pl-10 px-4 py-3.5 rounded-[12px] border border-gray-200 focus:outline-none focus:border-ravnaq-gold text-sm font-medium" />
                     </div>
 
                     <div className="relative">
